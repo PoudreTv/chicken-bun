@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- MODÈLE : tout ce qui est entre [[ ]] ou marqué « à adapter » est remplacé pour chaque client -->
+  <title>[[Nom de l'entreprise]] – [[Activité]] à [[Ville]]</title>
+  <meta name="description" content="[[Nom de l'entreprise]], [[activité]] à [[Ville]]. [[Une phrase sur ce qui la distingue, 150 caractères max.]]">
+  <meta name="theme-color" content="#17191c">
+  <link rel="canonical" href="[[URL_SITE]]/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[[Nom de l'entreprise]]">
+  <meta property="og:description" content="[[Activité]] à [[Ville]].">
+  <meta property="og:image" content="[[URL_SITE]]/img/apercu-partage.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Infos lues par Google (horaires, adresse) : à garder identiques au contenu de la page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "[[Nom de l'entreprise]]",
+    "url": "[[URL_SITE]]/",
+    "telephone": "[[+33XXXXXXXXX]]",
+    "email": "[[contact@exemple.fr]]",
+    "address": { "@type": "PostalAddress", "streetAddress": "[[Rue]]", "postalCode": "[[Code postal]]", "addressLocality": "[[Ville]]", "addressCountry": "FR" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="brand" href="#accueil">[[Nom de l'entreprise]]</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#services">Services</a>
+      <a href="#a-propos">À propos</a>
+      <a href="#galerie">Réalisations</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact" class="btn btn--primary">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== HAUT DE PAGE ===== -->
+  <section class="hero" id="accueil">
+    <img class="hero__bg" src="https://picsum.photos/seed/atelier-hero/1800/1200" alt="" fetchpriority="high">
+    <div class="container">
+      <div class="hero__rating"><span class="stars" aria-hidden="true">★★★★★</span> [[4,9/5 sur Google, 120 avis]]</div>
+      <h1>[[Une promesse claire en quelques mots]]</h1>
+      <p>[[Nom de l'entreprise]], [[activité]] à [[Ville]] depuis [[année]]. [[Ce que le client obtient en venant ici.]]</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contact">[[Demander un devis]]</a>
+        <a class="btn btn--ghost" href="tel:[[+33XXXXXXXXX]]">Appeler le [[0X XX XX XX XX]]</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ATOUTS ===== -->
+  <section class="perks" aria-label="Nos atouts">
+    <ul class="container perks__list">
+      <li><strong>[[Atout 1]]</strong><span>[[Précision courte]]</span></li>
+      <li><strong>[[Atout 2]]</strong><span>[[Précision courte]]</span></li>
+      <li><strong>[[Atout 3]]</strong><span>[[Précision courte]]</span></li>
+      <li><strong>[[Atout 4]]</strong><span>[[Précision courte]]</span></li>
+    </ul>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Nos services</span>
+        <h2>[[Ce que nous proposons]]</h2>
+        <p>[[Phrase d'introduction aux services.]]</p>
+      </div>
+      <div class="cards">
+        <!-- Un bloc .card par service : copier-coller pour en ajouter -->
+        <article class="card reveal">
+          <div class="card__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3>[[Service 1]]</h3>
+          <p>[[Description en deux phrases.]]</p>
+          <span class="card__price">[[À partir de XX €]]</span>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>[[Service 2]]</h3>
+          <p>[[Description en deux phrases.]]</p>
+          <span class="card__price">[[À partir de XX €]]</span>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5 2 7.5L12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></div>
+          <h3>[[Service 3]]</h3>
+          <p>[[Description en deux phrases.]]</p>
+          <span class="card__price">[[Sur devis]]</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== À PROPOS ===== -->
+  <section class="section section--alt" id="a-propos">
+    <div class="container about">
+      <img class="reveal" src="https://picsum.photos/seed/atelier-equipe/800/1000" alt="[[Photo de l'équipe ou du lieu]]" loading="lazy">
+      <div class="reveal">
+        <span class="kicker">À propos</span>
+        <h2>[[Notre histoire]]</h2>
+        <p>[[Qui est derrière l'entreprise, depuis quand, pourquoi. Deux ou trois phrases sincères.]]</p>
+        <p>[[Ce qui fait la différence : savoir-faire, matériaux, proximité, garanties…]]</p>
+        <ul>
+          <li>[[Point fort 1]]</li>
+          <li>[[Point fort 2]]</li>
+          <li>[[Point fort 3]]</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERIE ===== -->
+  <section class="section" id="galerie">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Réalisations</span>
+        <h2>[[En images]]</h2>
+      </div>
+      <!-- Une ligne <a> par photo : grande version dans href, miniature dans src -->
+      <div class="gallery" id="gallery">
+        <a href="https://picsum.photos/seed/atelier-1/1400/1000"><img src="https://picsum.photos/seed/atelier-1/500/500" alt="[[Description photo 1]]" loading="lazy"></a>
+        <a href="https://picsum.photos/seed/atelier-2/1400/1000"><img src="https://picsum.photos/seed/atelier-2/500/500" alt="[[Description photo 2]]" loading="lazy"></a>
+        <a href="https://picsum.photos/seed/atelier-3/1400/1000"><img src="https://picsum.photos/seed/atelier-3/500/500" alt="[[Description photo 3]]" loading="lazy"></a>
+        <a href="https://picsum.photos/seed/atelier-4/1400/1000"><img src="https://picsum.photos/seed/atelier-4/500/500" alt="[[Description photo 4]]" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AVIS ===== -->
+  <section class="section section--dark" id="avis">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Avis clients</span>
+        <h2>[[Ils nous font confiance]]</h2>
+        <p>[[Note]] sur Google, [[nombre]] avis. <a href="[[lien fiche Google]]" style="color:#fff">Voir tous les avis</a></p>
+      </div>
+      <div class="reviews">
+        <!-- Avis réels uniquement, avec l'accord du client -->
+        <blockquote class="review reveal"><span class="stars">★★★★★</span><p>« [[Extrait d'avis]] »</p><footer>[[Prénom N.]]</footer></blockquote>
+        <blockquote class="review reveal"><span class="stars">★★★★★</span><p>« [[Extrait d'avis]] »</p><footer>[[Prénom N.]]</footer></blockquote>
+        <blockquote class="review reveal"><span class="stars">★★★★★</span><p>« [[Extrait d'avis]] »</p><footer>[[Prénom N.]]</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFOS PRATIQUES + CONTACT ===== -->
+  <section class="section section--alt" id="contact">
+    <div class="container contact">
+      <div class="infos reveal">
+        <span class="kicker">Contact</span>
+        <h2>[[Venez nous voir]]</h2>
+        <dl>
+          <dt>Adresse</dt>
+          <dd>[[Rue]], [[Code postal]] [[Ville]]</dd>
+          <dt>Téléphone</dt>
+          <dd><a href="tel:[[+33XXXXXXXXX]]">[[0X XX XX XX XX]]</a></dd>
+          <dt>E-mail</dt>
+          <dd><a href="mailto:[[contact@exemple.fr]]">[[contact@exemple.fr]]</a></dd>
+        </dl>
+        <table class="hours" aria-label="Horaires d'ouverture">
+          <tr><td>Lundi – Vendredi</td><td>[[9h – 18h]]</td></tr>
+          <tr><td>Samedi</td><td>[[9h – 12h]]</td></tr>
+          <tr><td>Dimanche</td><td>Fermé</td></tr>
+        </table>
+        <iframe class="map" title="Plan d'accès" loading="lazy"
+          src="https://www.google.com/maps?q=[[Adresse+encodée]]&output=embed"></iframe>
+      </div>
+
+      <!-- Formulaire géré par Netlify Forms (les demandes arrivent par e-mail) -->
+      <form class="form reveal" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden"><label>Ne pas remplir <input name="bot-field"></label></p>
+        <h3>Écrivez-nous</h3>
+        <label>Nom <input name="nom" autocomplete="name" required></label>
+        <label>Téléphone <input name="telephone" type="tel" autocomplete="tel" required></label>
+        <label>E-mail <input name="email" type="email" autocomplete="email"></label>
+        <label>Votre message <textarea name="message" rows="5"></textarea></label>
+        <label class="consent"><input type="checkbox" name="consentement" required> J'accepte que mes informations soient utilisées pour être recontacté(e). Voir les <a href="mentions-legales.html">mentions légales</a>.</label>
+        <button class="btn btn--primary" type="submit">Envoyer</button>
+        <p class="form__msg" id="form-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div><strong style="color:#fff">[[Nom de l'entreprise]]</strong><br>[[Rue]], [[Code postal]] [[Ville]]<br><a href="tel:[[+33XXXXXXXXX]]">[[0X XX XX XX XX]]</a></div>
+      <div><a href="#services">Services</a><br><a href="#contact">Contact</a><br><a href="mentions-legales.html">Mentions légales</a></div>
+    </div>
+    <div class="footer__bottom">© <span id="year">2026</span> [[Nom de l'entreprise]] · SIRET [[XXX XXX XXX XXXXX]]</div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:[[+33XXXXXXXXX]]">Appeler</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=[[Adresse+encodée]]">Itinéraire</a>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true"><img alt=""></div>
+
+<script src="script.js"></script>
+</body>
+</html>

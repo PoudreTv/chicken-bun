@@ -1,0 +1,37 @@
+# Configuration Netlify : site statique, aucune étape de construction
+[build]
+  publish = "."
+
+# Documents internes : jamais servis aux visiteurs
+[[redirects]]
+  from = "/GUIDE-SITE.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify.toml"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Anciennes pages du site du client -> nouvelles sections (à remplir si le client avait déjà un site)
+# [[redirects]]
+#   from = "/contact.html"
+#   to = "/#contact"
+#   status = 301
+
+# En-têtes de sécurité
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Cache navigateur : images gardées 7 jours (pages HTML toujours revérifiées)
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
