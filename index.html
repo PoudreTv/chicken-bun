@@ -3,36 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- MODÈLE : tout ce qui est entre [[ ]] ou marqué « à adapter » est remplacé pour chaque client -->
-  <title>[[Nom de l'entreprise]] – [[Activité]] à [[Ville]]</title>
-  <meta name="description" content="[[Nom de l'entreprise]], [[activité]] à [[Ville]]. [[Une phrase sur ce qui la distingue, 150 caractères max.]]">
-  <meta name="theme-color" content="#17191c">
-  <link rel="canonical" href="[[URL_SITE]]/">
+  <title>Chicken Bun – Tacos, burgers et fried chicken à Thonon-les-Bains</title>
+  <meta name="description" content="Chicken Bun, restauration rapide au 51 avenue du Général de Gaulle à Thonon-les-Bains : tacos, burgers, poulet croustillant. Sur place ou à emporter. 4,7/5 sur Google.">
+  <meta name="theme-color" content="#170d09">
+  <link rel="canonical" href="https://chicken-bun.netlify.app/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="[[Nom de l'entreprise]]">
-  <meta property="og:description" content="[[Activité]] à [[Ville]].">
-  <meta property="og:image" content="[[URL_SITE]]/img/apercu-partage.jpg">
+  <meta property="og:title" content="Chicken Bun – Thonon-les-Bains">
+  <meta property="og:description" content="Tacos, burgers et fried chicken. Sur place ou à emporter.">
+  <meta property="og:image" content="https://chicken-bun.netlify.app/img/hero.jpg">
   <meta property="og:locale" content="fr_FR">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Infos lues par Google (horaires, adresse) : à garder identiques au contenu de la page -->
+  <!-- Infos lues par Google : à garder identiques au tableau des horaires plus bas -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "[[Nom de l'entreprise]]",
-    "url": "[[URL_SITE]]/",
-    "telephone": "[[+33XXXXXXXXX]]",
-    "email": "[[contact@exemple.fr]]",
-    "address": { "@type": "PostalAddress", "streetAddress": "[[Rue]]", "postalCode": "[[Code postal]]", "addressLocality": "[[Ville]]", "addressCountry": "FR" },
+    "@type": "FastFoodRestaurant",
+    "name": "Chicken Bun – Tasty Crousty Tacos Burger",
+    "url": "https://chicken-bun.netlify.app/",
+    "image": "https://chicken-bun.netlify.app/img/hero.jpg",
+    "telephone": "+33979006986",
+    "servesCuisine": ["Fried chicken", "Burgers", "Tacos"],
+    "priceRange": "10-20 €",
+    "address": { "@type": "PostalAddress", "streetAddress": "51 avenue du Général de Gaulle", "postalCode": "74200", "addressLocality": "Thonon-les-Bains", "addressCountry": "FR" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "255" },
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" }
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"], "opens": "18:00", "closes": "22:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "11:00", "closes": "14:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "18:00", "closes": "22:00" }
     ]
   }
   </script>
@@ -41,14 +45,16 @@
 
 <header class="header" id="header">
   <div class="container header__inner">
-    <a class="brand" href="#accueil">[[Nom de l'entreprise]]</a>
+    <a class="brand" href="#accueil" aria-label="Chicken Bun, retour en haut">
+      <!-- Logo provisoire (petite taille) : demander le fichier en haute définition -->
+      <img src="img/logo.png" alt="Chicken Bun" width="54" height="54">
+    </a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Navigation principale">
-      <a href="#services">Services</a>
-      <a href="#a-propos">À propos</a>
-      <a href="#galerie">Réalisations</a>
-      <a href="#avis">Avis</a>
-      <a href="#contact" class="btn btn--primary">Nous contacter</a>
+      <a href="#carte">La carte</a>
+      <a href="#spot">Le spot</a>
+      <a href="#horaires">Horaires &amp; accès</a>
+      <a href="tel:+33979006986" class="btn btn--primary">09 79 00 69 86</a>
     </nav>
   </div>
 </header>
@@ -57,148 +63,130 @@
 
   <!-- ===== HAUT DE PAGE ===== -->
   <section class="hero" id="accueil">
-    <img class="hero__bg" src="https://picsum.photos/seed/atelier-hero/1800/1200" alt="" fetchpriority="high">
+    <img class="hero__bg" src="img/hero.jpg" alt="" fetchpriority="high">
     <div class="container">
-      <div class="hero__rating"><span class="stars" aria-hidden="true">★★★★★</span> [[4,9/5 sur Google, 120 avis]]</div>
-      <h1>[[Une promesse claire en quelques mots]]</h1>
-      <p>[[Nom de l'entreprise]], [[activité]] à [[Ville]] depuis [[année]]. [[Ce que le client obtient en venant ici.]]</p>
+      <div class="hero__tags">
+        <span class="tag" id="status"><span class="status-dot"></span><span id="status-text">Thonon-les-Bains</span></span>
+        <span class="tag"><span class="stars" aria-hidden="true">★</span> 4,7/5 · 255 avis Google</span>
+      </div>
+      <h1>Tasty. <em>Crousty.</em> Chicken Bun.</h1>
+      <p>Tacos, burgers et poulet croustillant, avenue du Général de Gaulle à Thonon. Sur place ou à emporter.</p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#contact">[[Demander un devis]]</a>
-        <a class="btn btn--ghost" href="tel:[[+33XXXXXXXXX]]">Appeler le [[0X XX XX XX XX]]</a>
+        <a class="btn btn--primary" href="tel:+33979006986">Appeler pour commander</a>
+        <!-- [[à confirmer : lien de commande en ligne (Uber Eats, Deliveroo…)]] → bouton « Commander en ligne » ici -->
+        <a class="btn btn--ghost" href="#carte">Voir la carte</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== ATOUTS ===== -->
-  <section class="perks" aria-label="Nos atouts">
-    <ul class="container perks__list">
-      <li><strong>[[Atout 1]]</strong><span>[[Précision courte]]</span></li>
-      <li><strong>[[Atout 2]]</strong><span>[[Précision courte]]</span></li>
-      <li><strong>[[Atout 3]]</strong><span>[[Précision courte]]</span></li>
-      <li><strong>[[Atout 4]]</strong><span>[[Précision courte]]</span></li>
-    </ul>
-  </section>
+  <!-- ===== BANDEAU ===== -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Tacos</span><span>Burgers</span><span>Fried chicken</span><span>Tenders</span><span>Wings</span><span>Buckets</span><span>Sur place</span><span>À emporter</span>
+      <span>Tacos</span><span>Burgers</span><span>Fried chicken</span><span>Tenders</span><span>Wings</span><span>Buckets</span><span>Sur place</span><span>À emporter</span>
+    </div>
+  </div>
 
-  <!-- ===== SERVICES ===== -->
-  <section class="section" id="services">
+  <!-- ===== LA CARTE ===== -->
+  <section class="section" id="carte">
     <div class="container">
       <div class="section-head reveal">
-        <span class="kicker">Nos services</span>
-        <h2>[[Ce que nous proposons]]</h2>
-        <p>[[Phrase d'introduction aux services.]]</p>
+        <span class="kicker">La carte</span>
+        <h2>Faites votre choix</h2>
+        <p>Du poulet croustillant dans tous ses états : en tacos, en burger ou en bucket à partager.</p>
       </div>
-      <div class="cards">
-        <!-- Un bloc .card par service : copier-coller pour en ajouter -->
-        <article class="card reveal">
-          <div class="card__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
-          <h3>[[Service 1]]</h3>
-          <p>[[Description en deux phrases.]]</p>
-          <span class="card__price">[[À partir de XX €]]</span>
+      <div class="menu-grid">
+        <article class="dish reveal">
+          <span class="dish__badge">Signature</span>
+          <img src="img/carte/tacos.jpg" alt="Tacos coupé en deux" loading="lazy" width="700" height="525">
+          <div class="dish__body"><h3>Tacos signatures</h3><p>La galette bien garnie, refermée et dorée.</p></div>
         </article>
-        <article class="card reveal">
-          <div class="card__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h3>[[Service 2]]</h3>
-          <p>[[Description en deux phrases.]]</p>
-          <span class="card__price">[[À partir de XX €]]</span>
+        <article class="dish reveal">
+          <img src="img/carte/buns.jpg" alt="Burger au poulet croustillant" loading="lazy" width="700" height="525">
+          <div class="dish__body"><h3>Les Bun's</h3><p>Le poulet crousty dans un pain moelleux.</p></div>
         </article>
-        <article class="card reveal">
-          <div class="card__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5 2 7.5L12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></div>
-          <h3>[[Service 3]]</h3>
-          <p>[[Description en deux phrases.]]</p>
-          <span class="card__price">[[Sur devis]]</span>
+        <article class="dish reveal">
+          <img src="img/carte/burgers.jpg" alt="Burger et frites" loading="lazy" width="700" height="525">
+          <div class="dish__body"><h3>Burgers &amp; doubles</h3><p>Pour les grosses faims : un steak, ou deux.</p></div>
+        </article>
+        <article class="dish reveal">
+          <img src="img/carte/tenders.jpg" alt="Tenders de poulet croustillants et sauce" loading="lazy" width="700" height="525">
+          <div class="dish__body"><h3>Fried chicken</h3><p>Tenders et morceaux de poulet frit, croustillants dehors, tendres dedans.</p></div>
+        </article>
+        <article class="dish reveal">
+          <span class="dish__badge">À partager</span>
+          <img src="img/carte/wings.jpg" alt="Panier d'ailes de poulet" loading="lazy" width="700" height="525">
+          <div class="dish__body"><h3>Buckets duo</h3><p>Crousty ou spicy, tenders et wings à partager à deux.</p></div>
+        </article>
+        <article class="dish reveal">
+          <img src="img/carte/frites.jpg" alt="Panier de frites" loading="lazy" width="700" height="525">
+          <div class="dish__body"><h3>Menus &amp; à-côtés</h3><p>Frites, boissons et desserts pour compléter.</p></div>
         </article>
       </div>
+      <p class="menu-note">[[à confirmer : carte détaillée et prix]] · Carte complète au restaurant.</p>
     </div>
   </section>
 
-  <!-- ===== À PROPOS ===== -->
-  <section class="section section--alt" id="a-propos">
-    <div class="container about">
-      <img class="reveal" src="https://picsum.photos/seed/atelier-equipe/800/1000" alt="[[Photo de l'équipe ou du lieu]]" loading="lazy">
+  <!-- ===== LE SPOT ===== -->
+  <section class="section section--dark" id="spot">
+    <div class="container spot">
+      <img class="reveal" src="img/spot.jpg" alt="Burger au poulet croustillant" loading="lazy" width="900" height="900">
       <div class="reveal">
-        <span class="kicker">À propos</span>
-        <h2>[[Notre histoire]]</h2>
-        <p>[[Qui est derrière l'entreprise, depuis quand, pourquoi. Deux ou trois phrases sincères.]]</p>
-        <p>[[Ce qui fait la différence : savoir-faire, matériaux, proximité, garanties…]]</p>
-        <ul>
-          <li>[[Point fort 1]]</li>
-          <li>[[Point fort 2]]</li>
-          <li>[[Point fort 3]]</li>
+        <span class="kicker">Le spot</span>
+        <h2>Le crousty de l'avenue du Général de Gaulle</h2>
+        <p>Chicken Bun, c'est le rendez-vous fried chicken, burgers et tacos de Thonon, à deux pas du lycée de la Versoie.
+        On mange sur place entre amis, ou on repart avec sa commande.</p>
+        <ul class="facts">
+          <li><strong>Sur place</strong><span>Salle pour manger au chaud</span></li>
+          <li><strong>À emporter</strong><span>Appelez, on prépare</span></li>
+          <li><strong>10 à 20 €</strong><span>par personne</span></li>
+          <li><strong>Accessible</strong><span>aux fauteuils roulants</span></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ===== GALERIE ===== -->
-  <section class="section" id="galerie">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="kicker">Réalisations</span>
-        <h2>[[En images]]</h2>
-      </div>
-      <!-- Une ligne <a> par photo : grande version dans href, miniature dans src -->
-      <div class="gallery" id="gallery">
-        <a href="https://picsum.photos/seed/atelier-1/1400/1000"><img src="https://picsum.photos/seed/atelier-1/500/500" alt="[[Description photo 1]]" loading="lazy"></a>
-        <a href="https://picsum.photos/seed/atelier-2/1400/1000"><img src="https://picsum.photos/seed/atelier-2/500/500" alt="[[Description photo 2]]" loading="lazy"></a>
-        <a href="https://picsum.photos/seed/atelier-3/1400/1000"><img src="https://picsum.photos/seed/atelier-3/500/500" alt="[[Description photo 3]]" loading="lazy"></a>
-        <a href="https://picsum.photos/seed/atelier-4/1400/1000"><img src="https://picsum.photos/seed/atelier-4/500/500" alt="[[Description photo 4]]" loading="lazy"></a>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== AVIS ===== -->
-  <section class="section section--dark" id="avis">
+  <section class="section" id="avis">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="kicker">Avis clients</span>
-        <h2>[[Ils nous font confiance]]</h2>
-        <p>[[Note]] sur Google, [[nombre]] avis. <a href="[[lien fiche Google]]" style="color:#fff">Voir tous les avis</a></p>
-      </div>
-      <div class="reviews">
-        <!-- Avis réels uniquement, avec l'accord du client -->
-        <blockquote class="review reveal"><span class="stars">★★★★★</span><p>« [[Extrait d'avis]] »</p><footer>[[Prénom N.]]</footer></blockquote>
-        <blockquote class="review reveal"><span class="stars">★★★★★</span><p>« [[Extrait d'avis]] »</p><footer>[[Prénom N.]]</footer></blockquote>
-        <blockquote class="review reveal"><span class="stars">★★★★★</span><p>« [[Extrait d'avis]] »</p><footer>[[Prénom N.]]</footer></blockquote>
+      <div class="rating reveal">
+        <div class="rating__score">4,7</div>
+        <div>
+          <div class="stars" aria-label="4,7 sur 5">★★★★★</div>
+          <h2>Noté 4,7/5 par nos clients</h2>
+          <p>255 avis sur Google</p>
+          <!-- [[à confirmer : 3 avis réels à afficher, avec l'accord du restaurant]] -->
+        </div>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Chicken+Bun+51+avenue+du+G%C3%A9n%C3%A9ral+de+Gaulle+Thonon-les-Bains">Voir les avis</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== INFOS PRATIQUES + CONTACT ===== -->
-  <section class="section section--alt" id="contact">
+  <!-- ===== HORAIRES + ACCÈS ===== -->
+  <section class="section section--alt" id="horaires">
     <div class="container contact">
       <div class="infos reveal">
-        <span class="kicker">Contact</span>
-        <h2>[[Venez nous voir]]</h2>
+        <span class="kicker">Horaires &amp; accès</span>
+        <h2>Passez nous voir</h2>
+        <table class="hours" id="hours" aria-label="Horaires d'ouverture">
+          <tr data-day="1"><td>Lundi</td><td>18h – 22h30</td></tr>
+          <tr data-day="2"><td>Mardi</td><td>18h – 22h30</td></tr>
+          <tr data-day="3"><td>Mercredi</td><td>18h – 22h30</td></tr>
+          <tr data-day="4"><td>Jeudi</td><td>11h – 14h · 18h – 22h30</td></tr>
+          <tr data-day="5" class="closed"><td>Vendredi</td><td>Fermé</td></tr>
+          <tr data-day="6"><td>Samedi</td><td>18h – 22h30</td></tr>
+          <tr data-day="0"><td>Dimanche</td><td>18h – 22h</td></tr>
+        </table>
         <dl>
           <dt>Adresse</dt>
-          <dd>[[Rue]], [[Code postal]] [[Ville]]</dd>
+          <dd>51 avenue du Général de Gaulle, 74200 Thonon-les-Bains</dd>
           <dt>Téléphone</dt>
-          <dd><a href="tel:[[+33XXXXXXXXX]]">[[0X XX XX XX XX]]</a></dd>
-          <dt>E-mail</dt>
-          <dd><a href="mailto:[[contact@exemple.fr]]">[[contact@exemple.fr]]</a></dd>
+          <dd><a href="tel:+33979006986">09 79 00 69 86</a></dd>
         </dl>
-        <table class="hours" aria-label="Horaires d'ouverture">
-          <tr><td>Lundi – Vendredi</td><td>[[9h – 18h]]</td></tr>
-          <tr><td>Samedi</td><td>[[9h – 12h]]</td></tr>
-          <tr><td>Dimanche</td><td>Fermé</td></tr>
-        </table>
-        <iframe class="map" title="Plan d'accès" loading="lazy"
-          src="https://www.google.com/maps?q=[[Adresse+encodée]]&output=embed"></iframe>
+        <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&destination=51+avenue+du+G%C3%A9n%C3%A9ral+de+Gaulle+74200+Thonon-les-Bains">Itinéraire</a>
       </div>
-
-      <!-- Formulaire géré par Netlify Forms (les demandes arrivent par e-mail) -->
-      <form class="form reveal" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-        <input type="hidden" name="form-name" value="contact">
-        <p class="hidden"><label>Ne pas remplir <input name="bot-field"></label></p>
-        <h3>Écrivez-nous</h3>
-        <label>Nom <input name="nom" autocomplete="name" required></label>
-        <label>Téléphone <input name="telephone" type="tel" autocomplete="tel" required></label>
-        <label>E-mail <input name="email" type="email" autocomplete="email"></label>
-        <label>Votre message <textarea name="message" rows="5"></textarea></label>
-        <label class="consent"><input type="checkbox" name="consentement" required> J'accepte que mes informations soient utilisées pour être recontacté(e). Voir les <a href="mentions-legales.html">mentions légales</a>.</label>
-        <button class="btn btn--primary" type="submit">Envoyer</button>
-        <p class="form__msg" id="form-msg" role="status"></p>
-      </form>
+      <iframe class="map reveal" style="height:100%;min-height:380px;margin:0" title="Plan d'accès à Chicken Bun" loading="lazy"
+        src="https://www.google.com/maps?q=Chicken+Bun,+51+avenue+du+G%C3%A9n%C3%A9ral+de+Gaulle,+74200+Thonon-les-Bains&output=embed"></iframe>
     </div>
   </section>
 
@@ -207,19 +195,20 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
-      <div><strong style="color:#fff">[[Nom de l'entreprise]]</strong><br>[[Rue]], [[Code postal]] [[Ville]]<br><a href="tel:[[+33XXXXXXXXX]]">[[0X XX XX XX XX]]</a></div>
-      <div><a href="#services">Services</a><br><a href="#contact">Contact</a><br><a href="mentions-legales.html">Mentions légales</a></div>
+      <div>
+        <img src="img/logo.png" alt="Chicken Bun" width="64" height="64" loading="lazy">
+        51 avenue du Général de Gaulle<br>74200 Thonon-les-Bains<br><a href="tel:+33979006986">09 79 00 69 86</a>
+      </div>
+      <div><a href="#carte">La carte</a><br><a href="#horaires">Horaires &amp; accès</a><br><a href="mentions-legales.html">Mentions légales</a></div>
     </div>
-    <div class="footer__bottom">© <span id="year">2026</span> [[Nom de l'entreprise]] · SIRET [[XXX XXX XXX XXXXX]]</div>
+    <div class="footer__bottom">© <span id="year">2026</span> Chicken Bun – Tasty Crousty Tacos Burger · Photos d'illustration : Unsplash</div>
   </div>
 </footer>
 
 <div class="mobile-bar">
-  <a href="tel:[[+33XXXXXXXXX]]">Appeler</a>
-  <a href="https://www.google.com/maps/dir/?api=1&destination=[[Adresse+encodée]]">Itinéraire</a>
+  <a href="tel:+33979006986">Appeler</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=51+avenue+du+G%C3%A9n%C3%A9ral+de+Gaulle+74200+Thonon-les-Bains">Itinéraire</a>
 </div>
-
-<div class="lightbox" id="lightbox" aria-hidden="true"><img alt=""></div>
 
 <script src="script.js"></script>
 </body>

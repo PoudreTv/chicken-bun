@@ -92,3 +92,44 @@ if (form) form.addEventListener("submit", async (e) => {
 
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
+
+/* ---------- Chicken Bun : ouvert / fermé en direct + jour du jour dans les horaires ----------
+   Horaires à garder identiques au tableau #hours et au bloc ld+json de index.html.
+   Clé = jour (0 dimanche … 6 samedi), valeurs = créneaux [ouverture, fermeture] en minutes. */
+const SCHEDULE = {
+  0: [ [18 * 60, 22 * 60] ],
+  1: [ [18 * 60, 22 * 60 + 30] ],
+  2: [ [18 * 60, 22 * 60 + 30] ],
+  3: [ [18 * 60, 22 * 60 + 30] ],
+  4: [ [11 * 60, 14 * 60], [18 * 60, 22 * 60 + 30] ],
+  5: [],
+  6: [ [18 * 60, 22 * 60 + 30] ],
+};
+const DAYS = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+const hhmm = (m) => `${Math.floor(m / 60)}h${m % 60 ? String(m % 60).padStart(2, "0") : ""}`;
+
+function openingStatus(now) {
+  const day = now.getDay();
+  const min = now.getHours() * 60 + now.getMinutes();
+  const current = SCHEDULE[day].find(([o, c]) => min >= o && min < c);
+  if (current) return { open: true, text: `Ouvert · jusqu'à ${hhmm(current[1])}` };
+  const later = SCHEDULE[day].find(([o]) => o > min);
+  if (later) return { open: false, text: `Fermé · ouvre à ${hhmm(later[0])}` };
+  for (let i = 1; i <= 7; i++) {
+    const d = (day + i) % 7;
+    if (SCHEDULE[d].length) {
+      const when = i === 1 ? "demain" : DAYS[d];
+      return { open: false, text: `Fermé · ouvre ${when} à ${hhmm(SCHEDULE[d][0][0])}` };
+    }
+  }
+  return { open: false, text: "Fermé" };
+}
+
+const statusEl = document.getElementById("status");
+if (statusEl) {
+  const s = openingStatus(new Date());
+  statusEl.classList.add(s.open ? "is-open" : "is-closed");
+  document.getElementById("status-text").textContent = s.text;
+}
+const todayRow = document.querySelector(`#hours tr[data-day="${new Date().getDay()}"]`);
+if (todayRow) todayRow.classList.add("today");

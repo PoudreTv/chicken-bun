@@ -1,7 +1,7 @@
-# Guide du site – [[Nom de l'entreprise]]
+# Guide du site – Chicken Bun
 
 Ce document explique comment fonctionne votre site, qui détient quoi, et comment le faire
-évoluer. Il est destiné à [[Nom de l'entreprise]] et à toute personne qui reprendra le site.
+évoluer. Il est destiné à Chicken Bun et à toute personne qui reprendra le site.
 
 ---
 
@@ -18,7 +18,7 @@ Ce document explique comment fonctionne votre site, qui détient quoi, et commen
 ### Faire une modification plus tard
 | Vous voulez… | Solution |
 |---|---|
-| Changer un horaire, un numéro, une phrase | Me contacter ([[ton e-mail]]) ou n'importe quel développeur web |
+| Changer un horaire, un numéro, une phrase | Me contacter (adrienvachet@gmail.com) ou n'importe quel développeur web |
 | Ajouter des photos, un service, une page | Idem : le site est en HTML standard, tout développeur peut le reprendre avec ce guide |
 | Revenir en arrière après une erreur | Netlify → *Deploys* → choisir une version précédente → *Publish deploy* |
 
@@ -43,10 +43,10 @@ Site en HTML, CSS et JavaScript « purs » : aucun logiciel, aucune base de donn
 
 | Élément | Où | Titulaire | Coût |
 |---|---|---|---|
-| Nom de domaine `[[domaine]]` | [[OVH]] | **[[Nom de l'entreprise]]** | ~10-15 €/an |
-| Hébergement | Netlify | **[[Nom de l'entreprise]]** | gratuit |
+| Nom de domaine `[[domaine]]` | [[OVH]] | **Chicken Bun** | ~10-15 €/an |
+| Hébergement | Netlify | **Chicken Bun** | gratuit |
 | Code source | [[GitHub / copie remise]] | [[…]] | gratuit |
-| Fiche Google (avis, horaires) | Google Business Profile | **[[Nom de l'entreprise]]** | gratuit |
+| Fiche Google (avis, horaires) | Google Business Profile | **Chicken Bun** | gratuit |
 
 ## 3. Les demandes de contact
 
