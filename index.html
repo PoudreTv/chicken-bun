@@ -111,108 +111,134 @@
   </section>
 
   <!-- ===== LA CARTE =====
-       Reprise de la carte Uber Eats (17/11/2026). Prix volontairement absents :
-       les prix Uber Eats sont souvent plus élevés qu'au comptoir. -->
+       Prix sur place : panneaux du restaurant (photo Google de mai 2024), à faire confirmer.
+       Ne pas reprendre les prix Uber Eats (majorés). -->
   <section class="section section--alt" id="carte">
     <div class="container">
       <div class="section-head reveal">
         <span class="kicker">La carte</span>
         <h2>Faites votre choix</h2>
-        <p>Tout existe en <strong>menu</strong> : avec frites et une boisson au choix.</p>
+        <p>Seul ou en <strong>menu</strong>, avec frites et une boisson au choix.</p>
       </div>
 
       <div class="menu-tabs" role="tablist" aria-label="Catégories de la carte">
-        <button class="menu-tab" role="tab" aria-selected="true" aria-controls="m-tacos" data-img="img/carte/tacos.jpg">Tacos signatures</button>
-        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-classiques" data-img="img/carte/tacos.jpg">Tacos classiques</button>
+        <button class="menu-tab" role="tab" aria-selected="true" aria-controls="m-tacos" data-img="img/carte/tacos.jpg">Tacos</button>
         <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-buns" data-img="img/carte/buns.jpg">Bun's signatures</button>
         <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-burgers" data-img="img/carte/burgers.jpg">Burgers</button>
-        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-chicken" data-img="img/carte/wings.jpg">Buckets &amp; tenders</button>
-        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-autres" data-img="img/carte/tenders.jpg">Wraps, salade &amp; à-côtés</button>
+        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-double" data-img="img/carte/burgers.jpg">Double dose</button>
+        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-chicken" data-img="img/carte/wings.jpg">Fried chicken</button>
+        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-autres" data-img="img/carte/tenders.jpg">Wraps &amp; à-côtés</button>
       </div>
 
       <div class="menu-board">
         <img class="menu-board__img" id="menu-img" src="img/carte/tacos.jpg" alt="" loading="lazy" width="700" height="525">
 
         <div class="menu-panel" id="m-tacos" role="tabpanel">
-          <p class="menu-panel__intro">Frites et sauce fromagère dans tous les tacos.</p>
+          <h3 class="menu-panel__title">Tacos signatures</h3>
+          <p class="menu-panel__intro">Taille <strong>Maxi : +4 €</strong>.</p>
           <dl class="menu-list">
-            <div><dt>Cheesy Max <em>Populaire</em></dt><dd>Escalope, emmental, Boursin, cheddar</dd></div>
-            <div><dt>Montagnard</dt><dd>Escalope, raclette, jambon de dinde, oignons crispy</dd></div>
-            <div><dt>Tartiflette</dt><dd>Escalope, fromage à tartiflette, jambon de dinde, oignons crispy, crudités</dd></div>
-            <div><dt>Gourmand</dt><dd>Filet de tenders crispy, chèvre miel</dd></div>
-            <div><dt>Spécial</dt><dd>Filet de tenders crispy, Boursin, jambon de dinde</dd></div>
-            <div><dt>Oriental</dt><dd>Steak, tchoutchouka, œuf</dd></div>
-            <div><dt>Monster</dt><dd>Steak, jambon de dinde, œuf</dd></div>
-            <div><dt>Tikka Max</dt><dd>Escalope, tandoori, emmental, Kiri, crudités</dd></div>
-            <div><dt>Indya Max</dt><dd>Escalope, curry, emmental, Kiri</dd></div>
+            <div><dt>Cheesy Max <em>Populaire</em></dt><dd>Escalope, emmental, Boursin, cheddar, frites, crudités, sauce fromagère</dd><span class="price"><b>8,50 €</b><small>Menu 11,50 €</small></span></div>
+            <div><dt>Montagnard</dt><dd>Escalope, raclette, jambon de dinde, oignons crispy, frites, crudités, sauce fromagère</dd><span class="price"><b>9,00 €</b><small>Menu 12,00 €</small></span></div>
+            <div><dt>Tartiflette</dt><dd>Escalope, fromage à tartiflette, jambon de dinde, oignons crispy, frites, crudités, sauce fromagère</dd><span class="price"><b>9,00 €</b><small>Menu 12,00 €</small></span></div>
+            <div><dt>Gourmand</dt><dd>Filet de tenders crispy, chèvre miel, frites, crudités, sauce fromagère</dd><span class="price"><b>8,50 €</b><small>Menu 11,50 €</small></span></div>
+            <div><dt>Spécial</dt><dd>Filet de tenders crispy, Boursin, jambon de dinde, frites, crudités, sauce fromagère</dd><span class="price"><b>8,50 €</b><small>Menu 11,50 €</small></span></div>
+            <div><dt>Oriental</dt><dd>Steak, tchoutchouka, œuf, frites, crudités, sauce fromagère</dd><span class="price"><b>8,50 €</b><small>Menu 11,50 €</small></span></div>
+            <div><dt>Monster</dt><dd>Steak, jambon de dinde, œuf, frites, crudités, sauce fromagère</dd><span class="price"><b>8,50 €</b><small>Menu 11,50 €</small></span></div>
+            <div><dt>Tikka Max</dt><dd>Escalope, tandoori, emmental, Kiri, frites, crudités, sauce fromagère</dd><span class="price"><b>8,50 €</b><small>Menu 11,50 €</small></span></div>
+            <div><dt>Indya Max</dt><dd>Escalope, curry, emmental, Kiri, frites, crudités, sauce fromagère</dd><span class="price"><b>8,50 €</b><small>Menu 11,50 €</small></span></div>
           </dl>
-        </div>
-
-        <div class="menu-panel" id="m-classiques" role="tabpanel" hidden>
+          <h3 class="menu-panel__title">Tacos classiques</h3>
           <p class="menu-panel__intro">Frites, sauce fromagère et 2 sauces au choix.</p>
+          <!-- [[à confirmer : prix des tacos classiques]] -->
           <dl class="menu-list">
-            <div><dt>Tacos Tenders <em>Populaire</em></dt><dd>Filet de tenders crispy</dd></div>
-            <div><dt>Tacos Escalope</dt><dd>Escalope de poulet</dd></div>
-            <div><dt>Tacos Cordon bleu</dt><dd>Cordon bleu</dd></div>
-            <div><dt>Tacos Nuggets</dt><dd>Nuggets</dd></div>
-            <div><dt>Tacos Steak</dt><dd>Steak</dd></div>
-            <div><dt>Tacos Kebab</dt><dd>Viande kebab</dd></div>
+            <div><dt>Tenders <em>Populaire</em></dt><dd>Filet de tenders crispy</dd><span class="price"></span></div>
+            <div><dt>Escalope</dt><dd>Escalope de poulet</dd><span class="price"></span></div>
+            <div><dt>Cordon bleu</dt><dd>Cordon bleu</dd><span class="price"></span></div>
+            <div><dt>Nuggets</dt><dd>Nuggets</dd><span class="price"></span></div>
+            <div><dt>Steak</dt><dd>Steak</dd><span class="price"></span></div>
+            <div><dt>Kebab</dt><dd>Viande kebab</dd><span class="price"></span></div>
           </dl>
         </div>
 
         <div class="menu-panel" id="m-buns" role="tabpanel" hidden>
-          <p class="menu-panel__intro">Nos burgers signatures, au steak façon bouchère 120 g ou aux tenders crispy.</p>
           <dl class="menu-list">
-            <div><dt>Bun Tower <em>Populaire</em></dt><dd>Tenders crispy, emmental, galette de pommes de terre, cheddar, salade, sauce creamy</dd></div>
-            <div><dt>Bun Raclette <em>Populaire</em></dt><dd>Steak 120 g, raclette, bacon, oignons crispy, salade, tomate, sauce buffalo</dd></div>
-            <div><dt>Bun Mielleux <em>Populaire</em></dt><dd>Tenders crispy, chèvre, miel, salade, sauce crispy</dd></div>
-            <div><dt>Bun Smoky</dt><dd>Tenders crispy, bacon, cheddar, salade, sauce crispy</dd></div>
-            <div><dt>Bun Paysan</dt><dd>Tenders crispy, raclette, bacon, salade, sauce creamy</dd></div>
-            <div><dt>Bun Campagnard</dt><dd>Steak 120 g, fromage à tartiflette, bacon, oignons crispy, salade, tomates, sauce buffalo</dd></div>
-            <div><dt>Bun Whoopy</dt><dd>Steak 120 g, emmental, cheddar, galette de pommes de terre, salade, tomates, sauce giant</dd></div>
-            <div><dt>Bun Duel</dt><dd>Tenders crispy + steak 120 g, emmental, cheddar, salade, tomates, sauces giant et creamy</dd></div>
-            <div><dt>Méga Bun</dt><dd>2 steaks 120 g, emmental, cheddar, salade, tomates, sauce buffalo</dd></div>
+            <div><dt>Tower <em>Populaire</em></dt><dd>Tenders crispy, emmental, galette de pommes de terre, cheddar, salade, sauce creamy</dd><span class="price"><b>8,00 €</b><small>Menu 11,00 €</small></span></div>
+            <div><dt>Raclette <em>Populaire</em></dt><dd>Steak façon bouchère 120 g, raclette, bacon, oignons crispy, salade, tomate, sauce buffalo</dd><span class="price"><b>8,50 €</b><small>Menu 11,50 €</small></span></div>
+            <div><dt>Mielleux <em>Populaire</em></dt><dd>Tenders crispy, chèvre, miel, salade, sauce crispy</dd><span class="price"><b>8,00 €</b><small>Menu 11,00 €</small></span></div>
+            <div><dt>Smoky</dt><dd>Tenders crispy, bacon, cheddar, salade, sauce crispy</dd><span class="price"><b>8,00 €</b><small>Menu 11,00 €</small></span></div>
+            <div><dt>Paysan</dt><dd>Tenders crispy, raclette, bacon, salade, sauce creamy</dd><span class="price"><b>8,00 €</b><small>Menu 11,00 €</small></span></div>
+            <div><dt>Campagnard</dt><dd>Steak façon bouchère 120 g, fromage à tartiflette, bacon, oignons crispy, salade, tomate, sauce buffalo</dd><span class="price"><b>8,50 €</b><small>Menu 11,50 €</small></span></div>
+            <div><dt>Whoopy</dt><dd>Steak façon bouchère 120 g, emmental, cheddar, galette de pommes de terre, salade, tomates, sauce giant</dd><span class="price"><b>8,50 €</b><small>Menu 11,50 €</small></span></div>
+            <div><dt>Duel</dt><dd>Tenders crispy + steak façon bouchère 120 g, emmental, cheddar, salade, tomates, sauces giant et creamy</dd><span class="price"><b>9,00 €</b><small>Menu 12,00 €</small></span></div>
+            <div><dt>Méga Bun</dt><dd>2 steaks façon bouchère 120 g, emmental, cheddar, salade, tomates, sauce buffalo</dd><span class="price"><b>9,50 €</b><small>Menu 12,50 €</small></span></div>
           </dl>
         </div>
 
         <div class="menu-panel" id="m-burgers" role="tabpanel" hidden>
-          <p class="menu-panel__intro">Les classiques, et les formules « Doubles doses » : deux burgers dans le même menu.</p>
           <dl class="menu-list">
-            <div><dt>Chicken Crispy</dt><dd>Pain brioché, tenders crispy, cheddar, salade, sauce crispy</dd></div>
-            <div><dt>Giant <em>Populaire</em></dt><dd>2 steaks, cheddar, salade, oignons, sauce giant</dd></div>
-            <div><dt>Big · Big Bacon · Big Max</dt><dd>2 à 4 steaks, cheddar, salade, oignons, cornichons, sauce big</dd></div>
-            <div><dt>Cheese · Double · Triple</dt><dd>1, 2 ou 3 steaks et cheddars, oignons, cornichons, ketchup, moutarde</dd></div>
-            <div><dt>Fish</dt><dd>Filet de poisson pané, cheddar, sauce tartare</dd></div>
-            <div><dt>Doubles doses</dt><dd>12 combinaisons de deux burgers (ex. Giant &amp; Chicken Crispy, Big &amp; Big)</dd></div>
+            <div><dt>Chicken Crispy</dt><dd>Pain brioché, tenders crispy, cheddar, salade, sauce crispy</dd><span class="price"><b>5,50 €</b><small>Menu 8,50 €</small></span></div>
+            <div><dt>Giant <em>Populaire</em></dt><dd>2 steaks, cheddar, salade, oignons, sauce giant</dd><span class="price"><b>5,00 €</b><small>Menu 8,00 €</small></span></div>
+            <div><dt>Big</dt><dd>2 steaks, cheddar, salade, oignons, cornichons, sauce big</dd><span class="price"><b>5,50 €</b><small>Menu 8,50 €</small></span></div>
+            <div><dt>Big Bacon</dt><dd>Le Big, avec du bacon</dd><span class="price"><b>6,50 €</b><small>Menu 9,50 €</small></span></div>
+            <div><dt>Big Max</dt><dd>4 steaks, 2 cheddars, salade, oignons, cornichons, sauce big</dd><span class="price"><b>7,50 €</b><small>Menu 10,50 €</small></span></div>
+            <div><dt>Cheese</dt><dd>Steak, cheddar, oignons, cornichons, ketchup, moutarde</dd><span class="price"><b>3,00 €</b><small>Menu 6,00 €</small></span></div>
+            <div><dt>Double Cheese</dt><dd>2 steaks, 2 cheddars, oignons, cornichons, ketchup, moutarde</dd><span class="price"><b>4,50 €</b><small>Menu 7,50 €</small></span></div>
+            <div><dt>Triple Cheese</dt><dd>3 steaks, 3 cheddars, oignons, cornichons, ketchup, moutarde</dd><span class="price"><b>6,00 €</b><small>Menu 9,00 €</small></span></div>
+            <div><dt>Fish</dt><dd>Filet de poisson pané, cheddar, sauce tartare</dd><span class="price"><b>5,00 €</b><small>Menu 8,00 €</small></span></div>
+          </dl>
+        </div>
+
+        <div class="menu-panel" id="m-double" role="tabpanel" hidden>
+          <p class="menu-panel__intro">Deux burgers dans le même menu, <strong>servi avec frites et boisson</strong>.</p>
+          <dl class="menu-list">
+            <div><dt>S1</dt><dd>Cheese + Double Cheese</dd><span class="price"><b>9,50 €</b></span></div>
+            <div><dt>S2</dt><dd>Cheese + Big</dd><span class="price"><b>10,50 €</b></span></div>
+            <div><dt>S3</dt><dd>Wings x4 + Chicken Crispy</dd><span class="price"><b>11,00 €</b></span></div>
+            <div><dt>S4</dt><dd>Cheese + Big Bacon</dd><span class="price"><b>11,50 €</b></span></div>
+            <div><dt>S5</dt><dd>Tenders x3 + Big</dd><span class="price"><b>12,00 €</b></span></div>
+            <div><dt>S6</dt><dd>Giant + Giant</dd><span class="price"><b>12,00 €</b></span></div>
+            <div><dt>S7</dt><dd>Double Cheese + Chicken Crispy</dd><span class="price"><b>12,00 €</b></span></div>
+            <div><dt>S8</dt><dd>Giant + Big</dd><span class="price"><b>12,50 €</b></span></div>
+            <div><dt>S9</dt><dd>Chicken Crispy + Chicken Crispy</dd><span class="price"><b>12,50 €</b></span></div>
+            <div><dt>S10</dt><dd>Triple Cheese + Fish</dd><span class="price"><b>12,50 €</b></span></div>
+            <div><dt>S11</dt><dd>Chicken Crispy + Giant</dd><span class="price"><b>12,50 €</b></span></div>
+            <div><dt>S12</dt><dd>Big + Big</dd><span class="price"><b>12,50 €</b></span></div>
           </dl>
         </div>
 
         <div class="menu-panel" id="m-chicken" role="tabpanel" hidden>
-          <p class="menu-panel__intro">À partager… ou pas.</p>
+          <p class="menu-panel__intro">Poulet frais, assaisonné et pané par nos soins.</p>
           <dl class="menu-list">
-            <div><dt>Duo Crousty <em>Populaire</em></dt><dd>10 tenders</dd></div>
-            <div><dt>Duo Spicy <em class="hot">Épicé</em></dt><dd>16 wings</dd></div>
-            <div><dt>Duo Mix</dt><dd>7 tenders et 7 wings</dd></div>
-            <div><dt>Maxi Crousty · Spicy · Mix</dt><dd>20 tenders, 32 wings, ou 16 tenders et 16 wings</dd></div>
-            <div><dt>Tenders</dt><dd>Nombre de pièces au choix</dd></div>
-            <div><dt>Nuggets</dt><dd>Nombre de pièces au choix</dd></div>
+            <div><dt>Tenders x3</dt><dd>Filets de poulet panés</dd><span class="price"><b>4,50 €</b></span></div>
+            <div><dt>Tenders x5</dt><dd>Filets de poulet panés</dd><span class="price"><b>7,50 €</b></span></div>
+            <div><dt>Wings x4</dt><dd>Ailes de poulet croustillantes</dd><span class="price"><b>4,00 €</b></span></div>
+            <div><dt>Wings x6</dt><dd>Ailes de poulet croustillantes</dd><span class="price"><b>5,50 €</b></span></div>
+            <div><dt>Wings x10</dt><dd>Ailes de poulet croustillantes</dd><span class="price"><b>8,50 €</b></span></div>
+            <div><dt>Duo Crousty <em>Populaire</em></dt><dd>10 tenders</dd><span class="price"><b>14,50 €</b></span></div>
+            <div><dt>Duo Spicy <em class="hot">Épicé</em></dt><dd>16 wings</dd><span class="price"><b>14,50 €</b></span></div>
+            <div><dt>Duo Mix</dt><dd>7 tenders et 7 wings</dd><span class="price"><b>14,50 €</b></span></div>
+            <div><dt>Maxi Crousty</dt><dd>20 tenders</dd><span class="price"><b>28,00 €</b></span></div>
+            <div><dt>Maxi Spicy <em class="hot">Épicé</em></dt><dd>32 wings</dd><span class="price"><b>28,00 €</b></span></div>
+            <div><dt>Maxi Mix</dt><dd>16 tenders et 16 wings</dd><span class="price"><b>33,00 €</b></span></div>
           </dl>
-          <p class="menu-panel__intro">En menu : frites et boissons pour 2 (Duo) ou pour 4 (Maxi).</p>
+          <p class="menu-panel__intro">En menu : <strong>+3 €</strong> (frites et boisson), Duo <strong>+5 €</strong> (2 frites, 2 boissons), Maxi <strong>+6 €</strong> (4 frites, 1 grande bouteille).</p>
         </div>
 
         <div class="menu-panel" id="m-autres" role="tabpanel" hidden>
           <dl class="menu-list">
-            <div><dt>Wrap Tenders Rösti</dt><dd>Tenders crispy, galette de pommes de terre, cheddar, salade, tomate, sauce creamy</dd></div>
-            <div><dt>Wrap Tenders Bacon</dt><dd>Tenders crispy, bacon, cheddar, salade, tomate, sauce creamy</dd></div>
-            <div><dt>Salade César</dt><dd>Tenders crispy, tomates cerises, croûtons, sauce César</dd></div>
-            <div><dt>Frites cheddar · cheddar bacon</dt><dd>Frites nappées de cheddar fondu, avec ou sans éclats de bacon</dd></div>
-            <div><dt>Menu enfant</dt><dd>4 nuggets, frites, compote et Capri-Sun</dd></div>
-            <div><dt>Boissons</dt><dd>Oasis, Schweppes, Orangina, Dada, eau</dd></div>
+            <div><dt>Wrap Tenders Rösti</dt><dd>Tenders crispy, galette de pommes de terre, cheddar, salade, tomate, sauce creamy</dd><span class="price"><b>7,00 €</b></span></div>
+            <div><dt>Wrap Tenders Bacon</dt><dd>Tenders crispy, bacon, cheddar, salade, tomate, sauce creamy</dd><span class="price"><b>7,00 €</b></span></div>
+            <div><dt>Salade César</dt><dd>Tenders crispy, emmental, tomates cerises, croûtons, sauce César</dd><span class="price"><b>7,50 €</b></span></div>
+            <div><dt>Nuggets x6</dt><dd>Nuggets de poulet</dd><span class="price"><b>5,00 €</b></span></div>
+            <div><dt>Nuggets x10</dt><dd>Nuggets de poulet</dd><span class="price"><b>7,50 €</b></span></div>
+            <div><dt>Frites cheddar</dt><dd>Frites nappées de cheddar fondu</dd><span class="price"><b>3,50 €</b></span></div>
+            <div><dt>Frites cheddar bacon</dt><dd>Avec des éclats de bacon</dd><span class="price"><b>4,50 €</b></span></div>
+            <div><dt>Menu Kid</dt><dd>Cheese ou 4 nuggets, frites, Capri-Sun et compote</dd><span class="price"><b>6,00 €</b></span></div>
+            <div><dt>Boissons</dt><dd>Oasis, Schweppes, Orangina, Dada, eau</dd><span class="price"></span></div>
           </dl>
         </div>
       </div>
-      <!-- [[à confirmer : prix au comptoir]] -->
-      <p class="menu-note">Prix et carte complète au restaurant et sur <a href="https://www.ubereats.com/fr/store/chicken-bun/je0n2UGTXL2uMVBDOPB7uw" target="_blank" rel="noopener">Uber Eats</a>.</p>
+      <p class="menu-note">Prix sur place. En livraison, voir les prix sur <a href="https://www.ubereats.com/fr/store/chicken-bun/je0n2UGTXL2uMVBDOPB7uw" target="_blank" rel="noopener">Uber Eats</a>.</p>
     </div>
   </section>
   <!-- ===== LE SPOT ===== -->
@@ -225,8 +251,8 @@
         <p>Chicken Bun, c'est le rendez-vous fried chicken, burgers et tacos de Thonon, à deux pas du lycée de la Versoie.
         On mange sur place entre amis, ou on repart avec sa commande.</p>
         <ul class="facts">
-          <li><strong>Sur place</strong><span>Salle pour manger au chaud</span></li>
-          <li><strong>À emporter</strong><span>Appelez, on prépare</span></li>
+          <li><strong>Poulet frais</strong><span>Assaisonné et pané par nos soins</span></li>
+          <li><strong>Sur place</strong><span>ou à emporter</span></li>
           <li><strong>10 à 20 €</strong><span>par personne</span></li>
           <li><strong>Accessible</strong><span>aux fauteuils roulants</span></li>
         </ul>

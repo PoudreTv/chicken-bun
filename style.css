@@ -365,3 +365,13 @@ body.simple .header a { color: #fff; }
   .signature__stamp { width: 92px; height: 92px; font-size: 1.6rem; right: 0; }
 }.signature__img img { aspect-ratio: 4 / 5; object-fit: cover; }
 @media (max-width: 860px) { .signature__img img { aspect-ratio: 4 / 3; } }
+
+/* Carte : prix à droite de chaque plat */
+.menu-list > div { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; align-items: start; }
+.menu-list dt, .menu-list dd { grid-column: 1; }
+.menu-list .price { grid-column: 2; grid-row: 1 / span 2; text-align: right; white-space: nowrap; }
+.price b { display: block; font: 1.35rem var(--font-title); color: var(--brand); }
+.price small { display: block; font-size: .8rem; font-weight: 600; color: var(--ink); background: var(--accent); border-radius: 999px; padding: 2px 8px; margin-top: 4px; }
+.menu-panel__title { font-size: 1.6rem; text-transform: uppercase; color: var(--brand); margin: 8px 0 0; }
+.menu-panel__title + .menu-panel__intro { margin-top: 4px; }
+.menu-list + .menu-panel__title { margin-top: 36px; }
