@@ -1,4 +1,3 @@
+# DÉMO : site non référencé tant que le client n'a pas validé (remis par /livrer)
 User-agent: *
-Allow: /
-
-Sitemap: https://chicken-bun.netlify.app/sitemap.xml
+Disallow: /
