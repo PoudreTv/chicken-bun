@@ -51,6 +51,7 @@
     </a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#tasty-crousty">Tasty Crousty</a>
       <a href="#carte">La carte</a>
       <a href="#spot">Le spot</a>
       <a href="#horaires">Horaires &amp; accès</a>
@@ -70,10 +71,10 @@
         <span class="tag"><span class="stars" aria-hidden="true">★</span> 4,7/5 · 255 avis Google</span>
       </div>
       <h1>Tasty. <em>Crousty.</em> Chicken Bun.</h1>
-      <p>Tacos, burgers et poulet croustillant, avenue du Général de Gaulle à Thonon. Sur place ou à emporter.</p>
+      <p>Tacos, burgers, buckets et le fameux Tasty Crousty, avenue du Général de Gaulle à Thonon. Sur place, à emporter ou en livraison.</p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="tel:+33979006986">Appeler pour commander</a>
-        <!-- [[à confirmer : lien de commande en ligne (Uber Eats, Deliveroo…)]] → bouton « Commander en ligne » ici -->
+        <a class="btn btn--primary" href="https://www.ubereats.com/fr/store/chicken-bun/je0n2UGTXL2uMVBDOPB7uw" target="_blank" rel="noopener">Commander sur Uber Eats</a>
+        <a class="btn btn--accent" href="tel:+33979006986">Appeler : 09 79 00 69 86</a>
         <a class="btn btn--ghost" href="#carte">Voir la carte</a>
       </div>
     </div>
@@ -82,51 +83,135 @@
   <!-- ===== BANDEAU ===== -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker__track">
-      <span>Tacos</span><span>Burgers</span><span>Fried chicken</span><span>Tenders</span><span>Wings</span><span>Buckets</span><span>Sur place</span><span>À emporter</span>
-      <span>Tacos</span><span>Burgers</span><span>Fried chicken</span><span>Tenders</span><span>Wings</span><span>Buckets</span><span>Sur place</span><span>À emporter</span>
+      <span>Tasty Crousty</span><span>Tacos</span><span>Burgers</span><span>Fried chicken</span><span>Tenders</span><span>Wings</span><span>Buckets</span><span>Sur place</span><span>À emporter</span>
+      <span>Tasty Crousty</span><span>Tacos</span><span>Burgers</span><span>Fried chicken</span><span>Tenders</span><span>Wings</span><span>Buckets</span><span>Sur place</span><span>À emporter</span>
     </div>
   </div>
 
-  <!-- ===== LA CARTE ===== -->
-  <section class="section" id="carte">
+  <!-- ===== LE SIGNATURE ===== -->
+  <section class="section signature" id="tasty-crousty">
+    <div class="container signature__inner">
+      <div class="signature__img reveal">
+        <span class="signature__stamp">N°1<small>le plus aimé</small></span>
+        <img src="img/carte/tasty-crousty.jpg" alt="Barquette de frites garnies et nappées de sauce" loading="lazy">
+      </div>
+      <div class="reveal">
+        <span class="kicker">La signature de la maison</span>
+        <h2>Le Tasty Crousty</h2>
+        <p class="signature__lead">Une barquette de frites, garnie de poulet croustillant, de sauces et d'herbes. Simple, généreux, addictif.</p>
+        <ul class="signature__list">
+          <li><strong>Original</strong><span>Frites, poulet croustillant, sauces et herbes</span></li>
+          <li><strong>Curry</strong><span>Poulet croustillant sur riz, sauce curry</span></li>
+        </ul>
+        <a class="btn btn--primary" href="https://www.ubereats.com/fr/store/chicken-bun/je0n2UGTXL2uMVBDOPB7uw" target="_blank" rel="noopener">Je le commande</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LA CARTE =====
+       Reprise de la carte Uber Eats (17/11/2026). Prix volontairement absents :
+       les prix Uber Eats sont souvent plus élevés qu'au comptoir. -->
+  <section class="section section--alt" id="carte">
     <div class="container">
       <div class="section-head reveal">
         <span class="kicker">La carte</span>
         <h2>Faites votre choix</h2>
-        <p>Du poulet croustillant dans tous ses états : en tacos, en burger ou en bucket à partager.</p>
+        <p>Tout existe en <strong>menu</strong> : avec frites et une boisson au choix.</p>
       </div>
-      <div class="menu-grid">
-        <article class="dish reveal">
-          <span class="dish__badge">Signature</span>
-          <img src="img/carte/tacos.jpg" alt="Tacos coupé en deux" loading="lazy" width="700" height="525">
-          <div class="dish__body"><h3>Tacos signatures</h3><p>La galette bien garnie, refermée et dorée.</p></div>
-        </article>
-        <article class="dish reveal">
-          <img src="img/carte/buns.jpg" alt="Burger au poulet croustillant" loading="lazy" width="700" height="525">
-          <div class="dish__body"><h3>Les Bun's</h3><p>Le poulet crousty dans un pain moelleux.</p></div>
-        </article>
-        <article class="dish reveal">
-          <img src="img/carte/burgers.jpg" alt="Burger et frites" loading="lazy" width="700" height="525">
-          <div class="dish__body"><h3>Burgers &amp; doubles</h3><p>Pour les grosses faims : un steak, ou deux.</p></div>
-        </article>
-        <article class="dish reveal">
-          <img src="img/carte/tenders.jpg" alt="Tenders de poulet croustillants et sauce" loading="lazy" width="700" height="525">
-          <div class="dish__body"><h3>Fried chicken</h3><p>Tenders et morceaux de poulet frit, croustillants dehors, tendres dedans.</p></div>
-        </article>
-        <article class="dish reveal">
-          <span class="dish__badge">À partager</span>
-          <img src="img/carte/wings.jpg" alt="Panier d'ailes de poulet" loading="lazy" width="700" height="525">
-          <div class="dish__body"><h3>Buckets duo</h3><p>Crousty ou spicy, tenders et wings à partager à deux.</p></div>
-        </article>
-        <article class="dish reveal">
-          <img src="img/carte/frites.jpg" alt="Panier de frites" loading="lazy" width="700" height="525">
-          <div class="dish__body"><h3>Menus &amp; à-côtés</h3><p>Frites, boissons et desserts pour compléter.</p></div>
-        </article>
+
+      <div class="menu-tabs" role="tablist" aria-label="Catégories de la carte">
+        <button class="menu-tab" role="tab" aria-selected="true" aria-controls="m-tacos" data-img="img/carte/tacos.jpg">Tacos signatures</button>
+        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-classiques" data-img="img/carte/tacos.jpg">Tacos classiques</button>
+        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-buns" data-img="img/carte/buns.jpg">Bun's signatures</button>
+        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-burgers" data-img="img/carte/burgers.jpg">Burgers</button>
+        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-chicken" data-img="img/carte/wings.jpg">Buckets &amp; tenders</button>
+        <button class="menu-tab" role="tab" aria-selected="false" aria-controls="m-autres" data-img="img/carte/tenders.jpg">Wraps, salade &amp; à-côtés</button>
       </div>
-      <p class="menu-note">[[à confirmer : carte détaillée et prix]] · Carte complète au restaurant.</p>
+
+      <div class="menu-board">
+        <img class="menu-board__img" id="menu-img" src="img/carte/tacos.jpg" alt="" loading="lazy" width="700" height="525">
+
+        <div class="menu-panel" id="m-tacos" role="tabpanel">
+          <p class="menu-panel__intro">Frites et sauce fromagère dans tous les tacos.</p>
+          <dl class="menu-list">
+            <div><dt>Cheesy Max <em>Populaire</em></dt><dd>Escalope, emmental, Boursin, cheddar</dd></div>
+            <div><dt>Montagnard</dt><dd>Escalope, raclette, jambon de dinde, oignons crispy</dd></div>
+            <div><dt>Tartiflette</dt><dd>Escalope, fromage à tartiflette, jambon de dinde, oignons crispy, crudités</dd></div>
+            <div><dt>Gourmand</dt><dd>Filet de tenders crispy, chèvre miel</dd></div>
+            <div><dt>Spécial</dt><dd>Filet de tenders crispy, Boursin, jambon de dinde</dd></div>
+            <div><dt>Oriental</dt><dd>Steak, tchoutchouka, œuf</dd></div>
+            <div><dt>Monster</dt><dd>Steak, jambon de dinde, œuf</dd></div>
+            <div><dt>Tikka Max</dt><dd>Escalope, tandoori, emmental, Kiri, crudités</dd></div>
+            <div><dt>Indya Max</dt><dd>Escalope, curry, emmental, Kiri</dd></div>
+          </dl>
+        </div>
+
+        <div class="menu-panel" id="m-classiques" role="tabpanel" hidden>
+          <p class="menu-panel__intro">Frites, sauce fromagère et 2 sauces au choix.</p>
+          <dl class="menu-list">
+            <div><dt>Tacos Tenders <em>Populaire</em></dt><dd>Filet de tenders crispy</dd></div>
+            <div><dt>Tacos Escalope</dt><dd>Escalope de poulet</dd></div>
+            <div><dt>Tacos Cordon bleu</dt><dd>Cordon bleu</dd></div>
+            <div><dt>Tacos Nuggets</dt><dd>Nuggets</dd></div>
+            <div><dt>Tacos Steak</dt><dd>Steak</dd></div>
+            <div><dt>Tacos Kebab</dt><dd>Viande kebab</dd></div>
+          </dl>
+        </div>
+
+        <div class="menu-panel" id="m-buns" role="tabpanel" hidden>
+          <p class="menu-panel__intro">Nos burgers signatures, au steak façon bouchère 120 g ou aux tenders crispy.</p>
+          <dl class="menu-list">
+            <div><dt>Bun Tower <em>Populaire</em></dt><dd>Tenders crispy, emmental, galette de pommes de terre, cheddar, salade, sauce creamy</dd></div>
+            <div><dt>Bun Raclette <em>Populaire</em></dt><dd>Steak 120 g, raclette, bacon, oignons crispy, salade, tomate, sauce buffalo</dd></div>
+            <div><dt>Bun Mielleux <em>Populaire</em></dt><dd>Tenders crispy, chèvre, miel, salade, sauce crispy</dd></div>
+            <div><dt>Bun Smoky</dt><dd>Tenders crispy, bacon, cheddar, salade, sauce crispy</dd></div>
+            <div><dt>Bun Paysan</dt><dd>Tenders crispy, raclette, bacon, salade, sauce creamy</dd></div>
+            <div><dt>Bun Campagnard</dt><dd>Steak 120 g, fromage à tartiflette, bacon, oignons crispy, salade, tomates, sauce buffalo</dd></div>
+            <div><dt>Bun Whoopy</dt><dd>Steak 120 g, emmental, cheddar, galette de pommes de terre, salade, tomates, sauce giant</dd></div>
+            <div><dt>Bun Duel</dt><dd>Tenders crispy + steak 120 g, emmental, cheddar, salade, tomates, sauces giant et creamy</dd></div>
+            <div><dt>Méga Bun</dt><dd>2 steaks 120 g, emmental, cheddar, salade, tomates, sauce buffalo</dd></div>
+          </dl>
+        </div>
+
+        <div class="menu-panel" id="m-burgers" role="tabpanel" hidden>
+          <p class="menu-panel__intro">Les classiques, et les formules « Doubles doses » : deux burgers dans le même menu.</p>
+          <dl class="menu-list">
+            <div><dt>Chicken Crispy</dt><dd>Pain brioché, tenders crispy, cheddar, salade, sauce crispy</dd></div>
+            <div><dt>Giant <em>Populaire</em></dt><dd>2 steaks, cheddar, salade, oignons, sauce giant</dd></div>
+            <div><dt>Big · Big Bacon · Big Max</dt><dd>2 à 4 steaks, cheddar, salade, oignons, cornichons, sauce big</dd></div>
+            <div><dt>Cheese · Double · Triple</dt><dd>1, 2 ou 3 steaks et cheddars, oignons, cornichons, ketchup, moutarde</dd></div>
+            <div><dt>Fish</dt><dd>Filet de poisson pané, cheddar, sauce tartare</dd></div>
+            <div><dt>Doubles doses</dt><dd>12 combinaisons de deux burgers (ex. Giant &amp; Chicken Crispy, Big &amp; Big)</dd></div>
+          </dl>
+        </div>
+
+        <div class="menu-panel" id="m-chicken" role="tabpanel" hidden>
+          <p class="menu-panel__intro">À partager… ou pas.</p>
+          <dl class="menu-list">
+            <div><dt>Duo Crousty <em>Populaire</em></dt><dd>10 tenders</dd></div>
+            <div><dt>Duo Spicy <em class="hot">Épicé</em></dt><dd>16 wings</dd></div>
+            <div><dt>Duo Mix</dt><dd>7 tenders et 7 wings</dd></div>
+            <div><dt>Maxi Crousty · Spicy · Mix</dt><dd>20 tenders, 32 wings, ou 16 tenders et 16 wings</dd></div>
+            <div><dt>Tenders</dt><dd>Nombre de pièces au choix</dd></div>
+            <div><dt>Nuggets</dt><dd>Nombre de pièces au choix</dd></div>
+          </dl>
+          <p class="menu-panel__intro">En menu : frites et boissons pour 2 (Duo) ou pour 4 (Maxi).</p>
+        </div>
+
+        <div class="menu-panel" id="m-autres" role="tabpanel" hidden>
+          <dl class="menu-list">
+            <div><dt>Wrap Tenders Rösti</dt><dd>Tenders crispy, galette de pommes de terre, cheddar, salade, tomate, sauce creamy</dd></div>
+            <div><dt>Wrap Tenders Bacon</dt><dd>Tenders crispy, bacon, cheddar, salade, tomate, sauce creamy</dd></div>
+            <div><dt>Salade César</dt><dd>Tenders crispy, tomates cerises, croûtons, sauce César</dd></div>
+            <div><dt>Frites cheddar · cheddar bacon</dt><dd>Frites nappées de cheddar fondu, avec ou sans éclats de bacon</dd></div>
+            <div><dt>Menu enfant</dt><dd>4 nuggets, frites, compote et Capri-Sun</dd></div>
+            <div><dt>Boissons</dt><dd>Oasis, Schweppes, Orangina, Dada, eau</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="menu-note">[[à confirmer : prix au comptoir]] · Carte complète au restaurant et sur Uber Eats.</p>
     </div>
   </section>
-
   <!-- ===== LE SPOT ===== -->
   <section class="section section--dark" id="spot">
     <div class="container spot">

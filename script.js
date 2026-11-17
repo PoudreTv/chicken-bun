@@ -133,3 +133,15 @@ if (statusEl) {
 }
 const todayRow = document.querySelector(`#hours tr[data-day="${new Date().getDay()}"]`);
 if (todayRow) todayRow.classList.add("today");
+
+/* ---------- Chicken Bun : onglets de la carte ---------- */
+const menuTabs = [...document.querySelectorAll(".menu-tab")];
+const menuImg = document.getElementById("menu-img");
+menuTabs.forEach((tab) => tab.addEventListener("click", () => {
+  menuTabs.forEach((t) => {
+    const on = t === tab;
+    t.setAttribute("aria-selected", String(on));
+    document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+  });
+  if (menuImg && tab.dataset.img) menuImg.src = tab.dataset.img;
+}));

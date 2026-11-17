@@ -318,3 +318,50 @@ body.menu-open .header { background: var(--dark); color: #fff; }
 
 body.simple .header { background: var(--dark); color: #fff; }
 body.simple .header a { color: #fff; }
+
+/* Le Tasty Crousty (plat signature) */
+.signature { background: var(--brand); color: #fff; overflow: hidden; }
+.signature h2 { color: #fff; font-size: clamp(2.4rem, 6vw, 4.2rem); }
+.signature .kicker { color: var(--accent); }
+.signature__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.signature__img { position: relative; }
+.signature__img img { border-radius: var(--radius); border: 3px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); transform: rotate(-2deg); width: 100%; }
+.signature__stamp {
+  position: absolute; z-index: 1; top: -18px; right: -10px; width: 112px; height: 112px; border-radius: 50%;
+  display: grid; place-content: center; text-align: center; background: var(--accent); color: var(--ink);
+  border: 3px solid var(--ink); font: 2rem var(--font-title); line-height: 1; transform: rotate(10deg);
+}
+.signature__stamp small { font: 600 .7rem var(--font-body); text-transform: uppercase; }
+.signature__lead { font-size: 1.15rem; }
+.signature__list { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 10px; }
+.signature__list li { background: rgba(0,0,0,.18); border-radius: 12px; padding: 12px 16px; }
+.signature__list strong { font: 1.2rem var(--font-title); text-transform: uppercase; color: var(--accent); margin-right: 10px; }
+.signature .btn--primary { background: var(--ink); }
+.signature .btn--primary:hover { background: #000; }
+
+/* La carte : onglets + liste */
+.menu-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 24px; scrollbar-width: thin; }
+.menu-tab {
+  flex: none; font: 1.05rem var(--font-title); text-transform: uppercase; padding: 10px 18px; border-radius: 999px;
+  border: 2px solid var(--ink); background: var(--white); color: var(--ink); cursor: pointer;
+}
+.menu-tab[aria-selected="true"] { background: var(--ink); color: var(--accent); }
+.menu-board { display: grid; grid-template-columns: 5fr 7fr; gap: 40px; align-items: start; }
+.menu-board__img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); border: 3px solid var(--ink); position: sticky; top: calc(var(--header-h) + 20px); }
+.menu-panel__intro { color: var(--muted); font-style: italic; }
+.menu-list { margin: 0 0 16px; }
+.menu-list > div { padding: 14px 0; border-bottom: 2px dashed var(--line); }
+.menu-list dt { font: 1.35rem var(--font-title); text-transform: uppercase; color: var(--ink); }
+.menu-list dt em {
+  font: 600 .7rem var(--font-body); font-style: normal; text-transform: uppercase; letter-spacing: .05em;
+  background: var(--accent); color: var(--ink); padding: 3px 8px; border-radius: 999px; vertical-align: middle; margin-left: 6px;
+}
+.menu-list dt em.hot { background: var(--brand); color: #fff; }
+.menu-list dd { margin: 2px 0 0; color: var(--muted); }
+
+@media (max-width: 860px) {
+  .signature__inner, .menu-board { grid-template-columns: 1fr; gap: 32px; }
+  .menu-board__img { position: static; aspect-ratio: 16 / 9; }
+  .signature__stamp { width: 92px; height: 92px; font-size: 1.6rem; right: 0; }
+}.signature__img img { aspect-ratio: 4 / 5; object-fit: cover; }
+@media (max-width: 860px) { .signature__img img { aspect-ratio: 4 / 3; } }
