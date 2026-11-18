@@ -1,0 +1,128 @@
+# Espace d'administration de Chicken Bun (Pages CMS : https://app.pagescms.org)
+# Chaque formulaire correspond à un fichier de data/. Enregistrer = site à jour en 1 à 2 minutes.
+
+media:
+  input: img
+  output: img
+  rename: safe
+  categories: [image]
+
+content:
+  - name: infos
+    label: Infos, horaires et promo
+    type: file
+    path: data/infos.json
+    format: json
+    fields:
+      - name: promo
+        label: Promo du moment
+        type: object
+        description: Petit bandeau affiché en haut du site.
+        fields:
+          - name: afficher
+            label: Afficher la promo
+            type: boolean
+          - name: texte
+            label: Texte de la promo
+            type: string
+            description: "Exemple : -20 % sur les buckets le mardi !"
+      - name: horaires
+        label: Horaires d'ouverture
+        type: object
+        description: "Format : 18:00-22:30. Deux services : 11:00-14:00 / 18:00-22:30. Laisser vide si fermé."
+        fields:
+          - { name: lundi, label: Lundi, type: string }
+          - { name: mardi, label: Mardi, type: string }
+          - { name: mercredi, label: Mercredi, type: string }
+          - { name: jeudi, label: Jeudi, type: string }
+          - { name: vendredi, label: Vendredi, type: string }
+          - { name: samedi, label: Samedi, type: string }
+          - { name: dimanche, label: Dimanche, type: string }
+      - name: message_horaires
+        label: Message sous les horaires
+        type: string
+        description: "Exemple : Fermeture exceptionnelle le 25 décembre. Laisser vide si rien à signaler."
+      - name: telephone
+        label: Téléphone
+        type: string
+        required: true
+      - name: lien_uber_eats
+        label: Lien Uber Eats
+        type: string
+      - name: lien_instagram
+        label: Lien Instagram
+        type: string
+      - name: note_google
+        label: Note Google
+        type: string
+        description: "Exemple : 4,7"
+      - name: nombre_avis_google
+        label: Nombre d'avis Google
+        type: string
+      - name: supplements
+        label: Suppléments (€)
+        type: object
+        fields:
+          - { name: tacos_maxi, label: Tacos taille Maxi, type: number }
+          - { name: menu_individuel, label: "Fried chicken : passer en menu", type: number }
+          - { name: menu_duo, label: "Bucket Duo : passer en menu", type: number }
+          - { name: menu_maxi, label: "Bucket Maxi : passer en menu", type: number }
+
+  - name: photos
+    label: Photos
+    type: file
+    path: data/photos.json
+    format: json
+    fields:
+      - { name: haut_de_page, label: Grande photo du haut, type: image }
+      - { name: tasty_crousty, label: Photo du Tasty Crousty, type: image }
+      - { name: le_spot, label: Photo « Le spot », type: image }
+      - { name: carte_tacos, label: "Carte : photo Tacos", type: image }
+      - { name: carte_buns, label: "Carte : photo Bun's", type: image }
+      - { name: carte_burgers, label: "Carte : photo Burgers", type: image }
+      - { name: carte_double_dose, label: "Carte : photo Double dose", type: image }
+      - { name: carte_fried_chicken, label: "Carte : photo Fried chicken", type: image }
+      - { name: carte_a_cotes, label: "Carte : photo Wraps et à-côtés", type: image }
+
+  - name: carte
+    label: La carte
+    type: group
+    items:
+      # Champs d'un plat : définis ici une fois, réutilisés (*champs_plat) pour chaque catégorie
+      - name: tacos-signatures
+        label: Tacos signatures
+        type: file
+        path: data/carte/tacos-signatures.json
+        format: json
+        list: true
+        fields: &champs_plat
+          - name: nom
+            label: Nom du plat
+            type: string
+            required: true
+          - name: description
+            label: Composition
+            type: text
+          - name: prix
+            label: Prix seul (€)
+            type: number
+            description: "Exemple : 8.5 pour 8,50 €. Laisser vide pour ne pas afficher de prix."
+            options:
+              min: 0
+          - name: prix_menu
+            label: Prix en menu (€)
+            type: number
+            description: Laisser vide si le plat n'existe pas en menu.
+            options:
+              min: 0
+          - name: etiquette
+            label: Étiquette
+            type: select
+            options:
+              values: [Aucune, Populaire, Épicé, Nouveau]
+      - { name: tacos-classiques, label: Tacos classiques, type: file, path: data/carte/tacos-classiques.json, format: json, list: true, fields: *champs_plat }
+      - { name: buns, label: Bun's signatures, type: file, path: data/carte/buns.json, format: json, list: true, fields: *champs_plat }
+      - { name: burgers, label: Burgers, type: file, path: data/carte/burgers.json, format: json, list: true, fields: *champs_plat }
+      - { name: double-dose, label: Double dose, type: file, path: data/carte/double-dose.json, format: json, list: true, fields: *champs_plat }
+      - { name: fried-chicken, label: Fried chicken, type: file, path: data/carte/fried-chicken.json, format: json, list: true, fields: *champs_plat }
+      - { name: a-cotes, label: Wraps et à-côtés, type: file, path: data/carte/a-cotes.json, format: json, list: true, fields: *champs_plat }

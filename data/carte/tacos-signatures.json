@@ -1,0 +1,65 @@
+[
+  {
+    "nom": "Cheesy Max",
+    "description": "Escalope, emmental, Boursin, cheddar, frites, crudités, sauce fromagère",
+    "prix": 8.5,
+    "prix_menu": 11.5,
+    "etiquette": "Populaire"
+  },
+  {
+    "nom": "Montagnard",
+    "description": "Escalope, raclette, jambon de dinde, oignons crispy, frites, crudités, sauce fromagère",
+    "prix": 9,
+    "prix_menu": 12,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Tartiflette",
+    "description": "Escalope, fromage à tartiflette, jambon de dinde, oignons crispy, frites, crudités, sauce fromagère",
+    "prix": 9,
+    "prix_menu": 12,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Gourmand",
+    "description": "Filet de tenders crispy, chèvre miel, frites, crudités, sauce fromagère",
+    "prix": 8.5,
+    "prix_menu": 11.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Spécial",
+    "description": "Filet de tenders crispy, Boursin, jambon de dinde, frites, crudités, sauce fromagère",
+    "prix": 8.5,
+    "prix_menu": 11.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Oriental",
+    "description": "Steak, tchoutchouka, œuf, frites, crudités, sauce fromagère",
+    "prix": 8.5,
+    "prix_menu": 11.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Monster",
+    "description": "Steak, jambon de dinde, œuf, frites, crudités, sauce fromagère",
+    "prix": 8.5,
+    "prix_menu": 11.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Tikka Max",
+    "description": "Escalope, tandoori, emmental, Kiri, frites, crudités, sauce fromagère",
+    "prix": 8.5,
+    "prix_menu": 11.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Indya Max",
+    "description": "Escalope, curry, emmental, Kiri, frites, crudités, sauce fromagère",
+    "prix": 8.5,
+    "prix_menu": 11.5,
+    "etiquette": "Aucune"
+  }
+]

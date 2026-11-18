@@ -408,3 +408,10 @@ body.simple .header a { color: #fff; }
   .nav .btn { margin-top: 12px; font-size: 1.15rem; }
   .nav .btn + .btn { margin-top: 8px; }
 }
+/* Promo du moment (activée depuis l'espace d'administration) */
+.promo {
+  display: inline-block; margin: 0 0 18px; padding: 10px 18px; border-radius: 14px;
+  background: var(--accent); color: var(--ink); font: 1.15rem var(--font-title); text-transform: uppercase;
+  border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--brand); transform: rotate(-1deg);
+}
+.hours-msg { margin: 14px 0 0; padding: 12px 16px; border-radius: 12px; background: var(--bg-2); color: var(--ink); font-weight: 600; }

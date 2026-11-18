@@ -1,0 +1,65 @@
+[
+  {
+    "nom": "Chicken Crispy",
+    "description": "Pain brioché, tenders crispy, cheddar, salade, sauce crispy",
+    "prix": 5.5,
+    "prix_menu": 8.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Giant",
+    "description": "2 steaks, cheddar, salade, oignons, sauce giant",
+    "prix": 5,
+    "prix_menu": 8,
+    "etiquette": "Populaire"
+  },
+  {
+    "nom": "Big",
+    "description": "2 steaks, cheddar, salade, oignons, cornichons, sauce big",
+    "prix": 5.5,
+    "prix_menu": 8.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Big Bacon",
+    "description": "Le Big, avec du bacon",
+    "prix": 6.5,
+    "prix_menu": 9.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Big Max",
+    "description": "4 steaks, 2 cheddars, salade, oignons, cornichons, sauce big",
+    "prix": 7.5,
+    "prix_menu": 10.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Cheese",
+    "description": "Steak, cheddar, oignons, cornichons, ketchup, moutarde",
+    "prix": 3,
+    "prix_menu": 6,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Double Cheese",
+    "description": "2 steaks, 2 cheddars, oignons, cornichons, ketchup, moutarde",
+    "prix": 4.5,
+    "prix_menu": 7.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Triple Cheese",
+    "description": "3 steaks, 3 cheddars, oignons, cornichons, ketchup, moutarde",
+    "prix": 6,
+    "prix_menu": 9,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Fish",
+    "description": "Filet de poisson pané, cheddar, sauce tartare",
+    "prix": 5,
+    "prix_menu": 8,
+    "etiquette": "Aucune"
+  }
+]

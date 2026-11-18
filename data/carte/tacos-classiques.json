@@ -1,0 +1,32 @@
+[
+  {
+    "nom": "Tenders",
+    "description": "Filet de tenders crispy",
+    "etiquette": "Populaire"
+  },
+  {
+    "nom": "Escalope",
+    "description": "Escalope de poulet",
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Cordon bleu",
+    "description": "Cordon bleu",
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Nuggets",
+    "description": "Nuggets",
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Steak",
+    "description": "Steak",
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Kebab",
+    "description": "Viande kebab",
+    "etiquette": "Aucune"
+  }
+]

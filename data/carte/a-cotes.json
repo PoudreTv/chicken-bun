@@ -1,0 +1,55 @@
+[
+  {
+    "nom": "Wrap Tenders Rösti",
+    "description": "Tenders crispy, galette de pommes de terre, cheddar, salade, tomate, sauce creamy",
+    "prix": 7,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Wrap Tenders Bacon",
+    "description": "Tenders crispy, bacon, cheddar, salade, tomate, sauce creamy",
+    "prix": 7,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Salade César",
+    "description": "Tenders crispy, emmental, tomates cerises, croûtons, sauce César",
+    "prix": 7.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Nuggets x6",
+    "description": "Nuggets de poulet",
+    "prix": 5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Nuggets x10",
+    "description": "Nuggets de poulet",
+    "prix": 7.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Frites cheddar",
+    "description": "Frites nappées de cheddar fondu",
+    "prix": 3.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Frites cheddar bacon",
+    "description": "Avec des éclats de bacon",
+    "prix": 4.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Menu Kid",
+    "description": "Cheese ou 4 nuggets, frites, Capri-Sun et compote",
+    "prix": 6,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Boissons",
+    "description": "Oasis, Schweppes, Orangina, Dada, eau",
+    "etiquette": "Aucune"
+  }
+]

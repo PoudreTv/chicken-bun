@@ -1,0 +1,74 @@
+[
+  {
+    "nom": "S1",
+    "description": "Cheese + Double Cheese",
+    "prix": 9.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S2",
+    "description": "Cheese + Big",
+    "prix": 10.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S3",
+    "description": "Wings x4 + Chicken Crispy",
+    "prix": 11,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S4",
+    "description": "Cheese + Big Bacon",
+    "prix": 11.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S5",
+    "description": "Tenders x3 + Big",
+    "prix": 12,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S6",
+    "description": "Giant + Giant",
+    "prix": 12,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S7",
+    "description": "Double Cheese + Chicken Crispy",
+    "prix": 12,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S8",
+    "description": "Giant + Big",
+    "prix": 12.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S9",
+    "description": "Chicken Crispy + Chicken Crispy",
+    "prix": 12.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S10",
+    "description": "Triple Cheese + Fish",
+    "prix": 12.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S11",
+    "description": "Chicken Crispy + Giant",
+    "prix": 12.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "S12",
+    "description": "Big + Big",
+    "prix": 12.5,
+    "etiquette": "Aucune"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "nom": "Tower",
+    "description": "Tenders crispy, emmental, galette de pommes de terre, cheddar, salade, sauce creamy",
+    "prix": 8,
+    "prix_menu": 11,
+    "etiquette": "Populaire"
+  },
+  {
+    "nom": "Raclette",
+    "description": "Steak façon bouchère 120 g, raclette, bacon, oignons crispy, salade, tomate, sauce buffalo",
+    "prix": 8.5,
+    "prix_menu": 11.5,
+    "etiquette": "Populaire"
+  },
+  {
+    "nom": "Mielleux",
+    "description": "Tenders crispy, chèvre, miel, salade, sauce crispy",
+    "prix": 8,
+    "prix_menu": 11,
+    "etiquette": "Populaire"
+  },
+  {
+    "nom": "Smoky",
+    "description": "Tenders crispy, bacon, cheddar, salade, sauce crispy",
+    "prix": 8,
+    "prix_menu": 11,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Paysan",
+    "description": "Tenders crispy, raclette, bacon, salade, sauce creamy",
+    "prix": 8,
+    "prix_menu": 11,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Campagnard",
+    "description": "Steak façon bouchère 120 g, fromage à tartiflette, bacon, oignons crispy, salade, tomate, sauce buffalo",
+    "prix": 8.5,
+    "prix_menu": 11.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Whoopy",
+    "description": "Steak façon bouchère 120 g, emmental, cheddar, galette de pommes de terre, salade, tomates, sauce giant",
+    "prix": 8.5,
+    "prix_menu": 11.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Duel",
+    "description": "Tenders crispy + steak façon bouchère 120 g, emmental, cheddar, salade, tomates, sauces giant et creamy",
+    "prix": 9,
+    "prix_menu": 12,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Méga Bun",
+    "description": "2 steaks façon bouchère 120 g, emmental, cheddar, salade, tomates, sauce buffalo",
+    "prix": 9.5,
+    "prix_menu": 12.5,
+    "etiquette": "Aucune"
+  }
+]

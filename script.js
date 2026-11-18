@@ -93,48 +93,162 @@ if (form) form.addEventListener("submit", async (e) => {
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
-/* ---------- Chicken Bun : ouvert / fermé en direct + jour du jour dans les horaires ----------
-   Horaires à garder identiques au tableau #hours et au bloc ld+json de index.html.
-   Clé = jour (0 dimanche … 6 samedi), valeurs = créneaux [ouverture, fermeture] en minutes. */
-const SCHEDULE = {
-  0: [ [18 * 60, 22 * 60] ],
-  1: [ [18 * 60, 22 * 60 + 30] ],
-  2: [ [18 * 60, 22 * 60 + 30] ],
-  3: [ [18 * 60, 22 * 60 + 30] ],
-  4: [ [11 * 60, 14 * 60], [18 * 60, 22 * 60 + 30] ],
-  5: [],
-  6: [ [18 * 60, 22 * 60 + 30] ],
-};
-const DAYS = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
-const hhmm = (m) => `${Math.floor(m / 60)}h${m % 60 ? String(m % 60).padStart(2, "0") : ""}`;
+/* ============================================================
+   Chicken Bun : contenu modifiable par le client
+   Tout ce qui change souvent (carte, prix, horaires, liens, photos, promo)
+   est rangé dans data/*.json et modifié depuis l'espace d'administration
+   (Pages CMS, configuration dans .pages.yml). Ce script remplit la page.
+   ============================================================ */
 
-function openingStatus(now) {
-  const day = now.getDay();
-  const min = now.getHours() * 60 + now.getMinutes();
-  const current = SCHEDULE[day].find(([o, c]) => min >= o && min < c);
-  if (current) return { open: true, text: `Ouvert · jusqu'à ${hhmm(current[1])}` };
-  const later = SCHEDULE[day].find(([o]) => o > min);
-  if (later) return { open: false, text: `Fermé · ouvre à ${hhmm(later[0])}` };
-  for (let i = 1; i <= 7; i++) {
-    const d = (day + i) % 7;
-    if (SCHEDULE[d].length) {
-      const when = i === 1 ? "demain" : DAYS[d];
-      return { open: false, text: `Fermé · ouvre ${when} à ${hhmm(SCHEDULE[d][0][0])}` };
-    }
+const JOURS = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+const JOURS_EN = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const CARTE = ["tacos-signatures", "tacos-classiques", "buns", "burgers", "double-dose", "fried-chicken", "a-cotes"];
+
+// Toujours la dernière version des données (pas de cache après une modification)
+const charger = (fichier) =>
+  fetch(`data/${fichier}?v=${Date.now()}`, { cache: "no-store" }).then((r) => {
+    if (!r.ok) throw new Error(fichier);
+    return r.json();
+  });
+
+const echapper = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const prix = (n) => (n === null || n === undefined || n === "" || isNaN(Number(n)) ? "" : Number(n).toFixed(2).replace(".", ",") + " €");
+const hhmm = (m) => { m = m % 1440; return `${Math.floor(m / 60)}h${m % 60 ? String(m % 60).padStart(2, "0") : ""}`; };
+const iso = (m) => { m = m % 1440; return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`; };
+
+// « 11:00-14:00 / 18:00-22:30 », « 18h-22h30 », « 18h à 23h »… → [[660, 840], [1080, 1350]] en minutes
+function creneaux(texte) {
+  const out = [];
+  const re = /(\d{1,2})\s*[h:]\s*(\d{2})?\s*(?:-|–|à|a)\s*(\d{1,2})\s*[h:]?\s*(\d{2})?/gi;
+  let m;
+  while ((m = re.exec(texte || ""))) {
+    const o = Number(m[1]) * 60 + Number(m[2] || 0);
+    let c = Number(m[3]) * 60 + Number(m[4] || 0);
+    if (c <= o) c += 1440; // fermeture après minuit
+    out.push([o, c]);
   }
-  return { open: false, text: "Fermé" };
+  return out;
 }
 
-const statusEl = document.getElementById("status");
-if (statusEl) {
-  const s = openingStatus(new Date());
-  statusEl.classList.add(s.open ? "is-open" : "is-closed");
-  document.getElementById("status-text").textContent = s.text;
+function remplirCarte(fichier, plats) {
+  const dl = document.querySelector(`[data-carte="${fichier}"]`);
+  if (!dl) return;
+  dl.innerHTML = plats.map((p) => {
+    const etiquette = p.etiquette && p.etiquette !== "Aucune"
+      ? ` <em${p.etiquette === "Épicé" ? ' class="hot"' : ""}>${echapper(p.etiquette)}</em>` : "";
+    const seul = prix(p.prix), menu = prix(p.prix_menu);
+    return `<div><dt>${echapper(p.nom)}${etiquette}</dt><dd>${echapper(p.description)}</dd>` +
+      `<span class="price">${seul ? `<b>${seul}</b>` : ""}${menu ? `<small>Menu ${menu}</small>` : ""}</span></div>`;
+  }).join("");
 }
-const todayRow = document.querySelector(`#hours tr[data-day="${new Date().getDay()}"]`);
-if (todayRow) todayRow.classList.add("today");
 
-/* ---------- Chicken Bun : onglets de la carte ---------- */
+function remplirInfos(infos) {
+  // Téléphone : 09 79 00 69 86 → +33979006986
+  const chiffres = (infos.telephone || "").replace(/\D/g, "");
+  const intl = chiffres.startsWith("0") ? "+33" + chiffres.slice(1) : "+" + chiffres;
+  if (chiffres) {
+    document.querySelectorAll("[data-tel]").forEach((a) => (a.href = "tel:" + intl));
+    document.querySelectorAll("[data-tel-texte]").forEach((s) => (s.textContent = infos.telephone));
+  }
+  document.querySelectorAll('[data-lien="uber"]').forEach((a) => infos.lien_uber_eats && (a.href = infos.lien_uber_eats));
+  document.querySelectorAll('[data-lien="instagram"]').forEach((a) => infos.lien_instagram && (a.href = infos.lien_instagram));
+  document.querySelectorAll("[data-champ]").forEach((el) => {
+    const v = infos[el.dataset.champ];
+    if (v !== undefined && v !== "") el.textContent = v;
+  });
+  document.querySelectorAll("[data-supplement]").forEach((el) => {
+    const v = (infos.supplements || {})[el.dataset.supplement];
+    if (v !== undefined && v !== null && v !== "") el.textContent = String(v).replace(".", ",");
+  });
+
+  // Promo du moment
+  const promo = document.getElementById("promo");
+  if (promo && infos.promo && infos.promo.afficher && infos.promo.texte) {
+    promo.textContent = infos.promo.texte;
+    promo.hidden = false;
+  }
+
+  // Horaires : tableau (lundi en premier), jour du jour, message, ouvert / fermé
+  const horaires = {};
+  JOURS.forEach((j, d) => (horaires[d] = creneaux((infos.horaires || {})[j])));
+  const table = document.getElementById("hours");
+  if (table) {
+    const aujourdhui = new Date().getDay();
+    table.innerHTML = [1, 2, 3, 4, 5, 6, 0].map((d) => {
+      const c = horaires[d];
+      const texte = c.length ? c.map(([o, f]) => `${hhmm(o)} – ${hhmm(f)}`).join(" · ") : "Fermé";
+      const cls = [d === aujourdhui ? "today" : "", c.length ? "" : "closed"].join(" ").trim();
+      return `<tr${cls ? ` class="${cls}"` : ""}><td>${JOURS[d][0].toUpperCase() + JOURS[d].slice(1)}</td><td>${texte}</td></tr>`;
+    }).join("");
+  }
+  const msg = document.getElementById("hours-msg");
+  if (msg && infos.message_horaires) { msg.textContent = infos.message_horaires; msg.hidden = false; }
+
+  const statut = document.getElementById("status");
+  if (statut) {
+    const s = statutOuverture(horaires, new Date());
+    statut.classList.add(s.ouvert ? "is-open" : "is-closed");
+    document.getElementById("status-text").textContent = s.texte;
+  }
+
+  // Données pour Google (horaires, note) : toujours identiques à ce qui est affiché
+  const ld = document.getElementById("ld-json");
+  if (ld) {
+    try {
+      const data = JSON.parse(ld.textContent);
+      data.telephone = intl;
+      data.openingHoursSpecification = [];
+      for (let d = 0; d < 7; d++) {
+        horaires[d].forEach(([o, f]) => data.openingHoursSpecification.push(
+          { "@type": "OpeningHoursSpecification", dayOfWeek: JOURS_EN[d], opens: iso(o), closes: iso(f) }));
+      }
+      const note = parseFloat(String(infos.note_google || "").replace(",", "."));
+      if (note) data.aggregateRating = { "@type": "AggregateRating", ratingValue: String(note), reviewCount: String(infos.nombre_avis_google || "") };
+      ld.textContent = JSON.stringify(data);
+    } catch { /* données Google laissées telles quelles */ }
+  }
+}
+
+function statutOuverture(horaires, maintenant) {
+  const jour = maintenant.getDay();
+  const min = maintenant.getHours() * 60 + maintenant.getMinutes();
+  const hier = (jour + 6) % 7;
+  // créneau d'hier qui déborde après minuit
+  const nuit = horaires[hier].find(([o, f]) => f > 1440 && min + 1440 < f);
+  if (nuit) return { ouvert: true, texte: `Ouvert · jusqu'à ${hhmm(nuit[1])}` };
+  const enCours = horaires[jour].find(([o, f]) => min >= o && min < f);
+  if (enCours) return { ouvert: true, texte: `Ouvert · jusqu'à ${hhmm(enCours[1])}` };
+  const plusTard = horaires[jour].find(([o]) => o > min);
+  if (plusTard) return { ouvert: false, texte: `Fermé · ouvre à ${hhmm(plusTard[0])}` };
+  for (let i = 1; i <= 7; i++) {
+    const d = (jour + i) % 7;
+    if (horaires[d].length) return { ouvert: false, texte: `Fermé · ouvre ${i === 1 ? "demain" : JOURS[d]} à ${hhmm(horaires[d][0][0])}` };
+  }
+  return { ouvert: false, texte: "Fermé" };
+}
+
+function remplirPhotos(photos) {
+  document.querySelectorAll("img[data-photo]").forEach((img) => {
+    const src = photos[img.dataset.photo];
+    if (src) img.src = src.replace(/^\//, "");
+  });
+  document.querySelectorAll(".menu-tab[data-photo]").forEach((t) => {
+    const src = photos[t.dataset.photo];
+    if (src) t.dataset.img = src.replace(/^\//, "");
+  });
+  const actif = document.querySelector('.menu-tab[aria-selected="true"]');
+  if (actif && actif.dataset.img) document.getElementById("menu-img").src = actif.dataset.img;
+}
+
+Promise.all([charger("infos.json"), charger("photos.json"), ...CARTE.map((f) => charger(`carte/${f}.json`))])
+  .then(([infos, photos, ...cartes]) => {
+    remplirInfos(infos);
+    remplirPhotos(photos);
+    cartes.forEach((plats, i) => remplirCarte(CARTE[i], plats));
+  })
+  .catch((e) => console.error("Chargement des données impossible :", e));
+
+/* ---------- Onglets de la carte ---------- */
 const menuTabs = [...document.querySelectorAll(".menu-tab")];
 const menuImg = document.getElementById("menu-img");
 menuTabs.forEach((tab) => tab.addEventListener("click", () => {

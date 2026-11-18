@@ -1,0 +1,68 @@
+[
+  {
+    "nom": "Tenders x3",
+    "description": "Filets de poulet panés",
+    "prix": 4.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Tenders x5",
+    "description": "Filets de poulet panés",
+    "prix": 7.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Wings x4",
+    "description": "Ailes de poulet croustillantes",
+    "prix": 4,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Wings x6",
+    "description": "Ailes de poulet croustillantes",
+    "prix": 5.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Wings x10",
+    "description": "Ailes de poulet croustillantes",
+    "prix": 8.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Duo Crousty",
+    "description": "10 tenders",
+    "prix": 14.5,
+    "etiquette": "Populaire"
+  },
+  {
+    "nom": "Duo Spicy",
+    "description": "16 wings",
+    "prix": 14.5,
+    "etiquette": "Épicé"
+  },
+  {
+    "nom": "Duo Mix",
+    "description": "7 tenders et 7 wings",
+    "prix": 14.5,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Maxi Crousty",
+    "description": "20 tenders",
+    "prix": 28,
+    "etiquette": "Aucune"
+  },
+  {
+    "nom": "Maxi Spicy",
+    "description": "32 wings",
+    "prix": 28,
+    "etiquette": "Épicé"
+  },
+  {
+    "nom": "Maxi Mix",
+    "description": "16 tenders et 16 wings",
+    "prix": 33,
+    "etiquette": "Aucune"
+  }
+]
