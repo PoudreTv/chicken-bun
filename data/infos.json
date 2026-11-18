@@ -1,6 +1,6 @@
 {
   "promo": {
-    "afficher": true,
+    "afficher": false,
     "texte": "-10% ce soir !"
   },
   "horaires": {
