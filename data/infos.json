@@ -1,23 +1,21 @@
 {
-  "telephone": "09 79 00 69 86",
-  "lien_uber_eats": "https://www.ubereats.com/fr/store/chicken-bun/je0n2UGTXL2uMVBDOPB7uw",
-  "lien_instagram": "https://www.instagram.com/chickenbun74/",
-  "note_google": "4,7",
-  "nombre_avis_google": "255",
   "promo": {
-    "afficher": false,
-    "texte": ""
+    "afficher": true,
+    "texte": "-10% ce soir !"
   },
   "horaires": {
     "lundi": "18:00-22:30",
     "mardi": "18:00-22:30",
     "mercredi": "18:00-22:30",
     "jeudi": "11:00-14:00 / 18:00-22:30",
-    "vendredi": "",
     "samedi": "18:00-22:30",
     "dimanche": "18:00-22:00"
   },
-  "message_horaires": "",
+  "telephone": "09 79 00 69 86",
+  "lien_uber_eats": "https://www.ubereats.com/fr/store/chicken-bun/je0n2UGTXL2uMVBDOPB7uw",
+  "lien_instagram": "https://www.instagram.com/chickenbun74/",
+  "note_google": "4,7",
+  "nombre_avis_google": "255",
   "supplements": {
     "tacos_maxi": 4,
     "menu_individuel": 3,
